@@ -117,6 +117,25 @@ html {
     color: #ffffff;
 }
 
+.button-contacts-gold {
+    margin-top: 30px;
+    width: 220px;
+    height: 55px;
+    border: 0;
+    background-color: #bdae82;
+    color: #000000;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    transition: 0.3s;
+
+}
+
+.button-contacts-gold:hover {
+    color: #ffffff;
+}
+
 
 .container {
     display: flex;
@@ -525,6 +544,104 @@ html {
     border: 3px solid #bdae82;
 }
 
+.container-contacts-section {
+    display: flex;
+    margin-top: 100px;
+    width: 1440px;
+    height: 700px;
+    background: url('./assets/img/contacts.jpg');
+    background-size: auto 700px;
+    background-position: center center;
+    
+}
+
+.container-contacts-section-contacts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-left: 970px;
+    width: 450px;
+    height: 445px;
+    
+}
+
+.container-contacts-section-title {
+    margin: 0 0;
+    width: 450px; 
+    height: 80px;
+    line-height: 80px;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 40px;
+    color: #bdae82;
+}
+
+.input-email {
+    margin-top: 40px;
+    padding: 3px 18px;
+    width:  450px;
+    height: 50px;
+    border: 2px solid #bdae82;
+    outline: 0;
+    outline-offset: 0;
+    background: rgba( 0,0,0,0.5);
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #bdae82;
+    
+}
+
+.input-email::placeholder {
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+  }
+
+.input-tel {
+    margin-top: 20px;
+    padding: 3px 18px;
+    width:  450px;
+    height: 50px;
+    border: 2px solid #bdae82;
+    outline: 0;
+    outline-offset: 0;
+    background: rgba( 0,0,0,0.5);
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #bdae82;
+    
+}
+
+.input-tel::placeholder {
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+  }
+
+.input-textarea {
+    margin-top: 20px;
+    padding: 11px 18px;
+    width:  450px;
+    height: 100px;
+    border: 2px solid #bdae82;
+    outline: 0;
+    outline-offset: 0;
+    background: rgba( 0,0,0,0.5);
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #bdae82;
+}
+
+.input-textarea::placeholder {
+    width:  204px;
+    height: 40px;
+    font-family: inherit;
+    color: #bdae82;
+    font-size: 20px;
+  }
 
 .en-ru {
     display: flex;
