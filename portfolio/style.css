@@ -366,6 +366,38 @@ html {
     
 }
 
+.container-video-section {
+    
+}
+
+.container-video-section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 1440px; */
+    width: 1440px;
+    margin: 0 auto;
+    margin-top: 100px; 
+    padding: 0 0;
+    
+}
+
+.container-video-section-title-textTitle {
+    display: flex;
+    justify-content: center;
+    margin: 0 0;
+    
+    width: 154px; 
+    height: 80px;
+    line-height: 81px;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 40px;
+    color: #bdae82;
+    
+}
+
+
 .en-ru {
     display: flex;
     justify-content: space-between;
@@ -523,6 +555,37 @@ nav {
     color: #bdae82;
 }
 
+.video-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.video-player-img {
+    margin-top: 60px;
+}
+
+.video-player-logo {
+    position: absolute;
+    top: 348px;
+    left: 656.7px;
+    background-image: url('./assets/svg/play_hover.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+    width: 129.86px;
+    height: 130px;
+
+    
+}
+
+.video-player-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+  }  
+
+
 .wrapper-skills {
     border-top: 2px solid #BDAE82;
     width: 274px;
@@ -536,4 +599,19 @@ nav {
 .wrapper-portfolio-right {
     border-top: 2px solid #BDAE82;
     width: 241px;
+}
+
+.wrapper-video-left {
+    border-top: 2px solid #BDAE82;
+    width: 273px;
+}
+
+.wrapper-video-right-right {
+    border-top: 2px solid #000000;
+    width: 2px;
+}
+
+.wrapper-video-right {
+    border-top: 2px solid #BDAE82;
+    width: 271px;
 }
