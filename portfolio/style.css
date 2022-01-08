@@ -576,6 +576,161 @@ html {
     color: #bdae82;
 }
 
+.container-footer {
+    display: flex;
+    width: 1440px;
+    height: 150px;
+    margin: 0 auto;
+    
+}
+
+.container-footer-year {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-footer-year-copyright {
+    margin-left: 20px;
+    width: 19px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.container-footer-year-year {
+    margin-left: 20px;
+    width: 49px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.container-footer-year-github {
+    margin-left: 20px;
+    width: 61px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.footer-link-github {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.footer-link-github:hover {
+    color: #bdae82;
+}
+
+.container-footer-rs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link-rs {
+    margin-left: 426px;
+    width: 211px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-link-rs:hover {
+    color: #bdae82;
+}
+
+.container-footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-footer-links-inst {
+    margin-left: 406px;
+    background-image: url('./assets/svg/inst.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+    width: 32px;
+    height: 32px;
+}
+
+
+.container-footer-links-inst:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+  }
+
+.container-footer-links-fb {
+    margin-left: 20px;
+    background-image: url('./assets/svg/fb.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+    width: 32px;
+    height: 32px;
+}
+
+
+.container-footer-links-fb:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+}
+
+.container-footer-links-tw {
+    margin-left: 20px;
+    background-image: url('./assets/svg/tw.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+    width: 32px;
+    height: 32px;
+}
+
+
+.container-footer-links-tw:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+}
+
+.container-footer-links-pint {
+    margin-left: 20px;
+    background-image: url('./assets/svg/pinterest.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+    width: 32px;
+    height: 32px;
+}
+
+
+.container-footer-links-pint:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+}
+
+
+
+
+
+
 .input-email {
     margin-top: 40px;
     padding: 3px 18px;
