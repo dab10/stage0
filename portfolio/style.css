@@ -145,6 +145,8 @@ html {
     background: url('./assets/img/header-bg.jpg');
     background-repeat: no-repeat;
     background-position: center 0;
+    width: 1440px;
+    margin: 0 auto;
 }
 .container-head {
     display: flex;
