@@ -191,6 +191,13 @@ html {
     padding: 20px 20px;
 }
 
+@media (max-width: 768px) {
+    .container-head {
+        
+        padding: 20px 64px 20px 60px;
+    }
+  }
+
 .container-hero-section {
     background-image: url('./assets/img/header-bg.jpg');
     background-repeat: no-repeat;
@@ -839,6 +846,12 @@ ul.container-footer-links li {
     height: 50px;
 }
 
+@media (max-width: 768px) {
+    .en-ru {
+        margin-left: auto;
+    }
+}
+
 .switch-eng {
     margin-left: 0.5px;
     font-family: 'Inter';
@@ -886,6 +899,12 @@ ul.container-footer-links li {
     height: 50px;
 }
 
+@media (max-width: 768px) {
+    .logo {
+        
+    }
+}
+
 .logo:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
       contrast(87%);
@@ -897,6 +916,12 @@ nav {
     margin-left: auto;
 }
 
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+}
+
 .nav-list {
     display: flex;
     justify-content: row;
@@ -906,6 +931,12 @@ nav {
     margin: 0 0;
     width: 500px;
     height: 50px;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
 }
 
 .nav-link {
@@ -1034,3 +1065,59 @@ nav {
     border-top: 2px solid #BDAE82;
     width: 279px;
 }
+
+/* HAMBURGER */
+
+/* ALL FOR HAMBURGER */
+  
+.hamburger .line{
+    display: none;
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger .line {
+        display: flex;
+        margin: 10px auto;
+    }
+
+}
+
+
+
+
+  .hamburger:hover{
+    cursor: pointer;
+}
+  
+.hamburger:hover .line {
+    background-color: #BDAE82;
+  }
+
+  
+  /* ONE */
+  
+  #hamburger-1.is-active .line:nth-child(2){
+    opacity: 0;
+  }
+  
+  #hamburger-1.is-active .line:nth-child(1){
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+  }
+  
+  #hamburger-1.is-active .line:nth-child(3){
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+  }
