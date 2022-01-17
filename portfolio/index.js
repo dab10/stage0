@@ -18,3 +18,21 @@ $(document).ready(function(){
   });
 
 
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+  const div = document.querySelector('.grey');
+  const navLink = document.querySelector('.nav-list');
+
+function toggleMenu() {
+  // hamburger.classList.toggle('open');
+  nav.classList.toggle('open');
+  div.classList.toggle('overplay');
+}
+hamburger.addEventListener('click', toggleMenu);
+
+function closeMenu() {
+  nav.classList.remove('open');
+  div.classList.remove('overplay');
+  hamburger.classList.remove('is-active');
+}
+navLink.addEventListener('click', closeMenu);
