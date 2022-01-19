@@ -564,6 +564,12 @@ html {
     padding: 0 0;
 }
 
+@media (max-width: 768px) {
+    .container-video-section-title {
+        margin-top: 80px;
+    }
+}
+
 .container-video-section-title-textTitle {
     display: flex;
     justify-content: center;
@@ -575,6 +581,15 @@ html {
     font-weight: 700;
     font-size: 40px;
     color: #bdae82;
+}
+
+@media (max-width: 768px) {
+    .container-video-section-title-textTitle {
+        width: 131px; 
+        height: 80px;
+        line-height: 81px;
+        font-size: 32px;
+    }
 }
 
 /* PRICE: container-price-section */
@@ -1240,11 +1255,34 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative
+    position: relative;
+    
+    
 }
 
 .video-player-img {
+    display: flex;
     margin-top: 60px;
+    width: 1440px;
+    height: 705px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-image: url('./assets/img/video-player.jpg');
+    background-repeat: no-repeat; 
+    
+}
+
+@media (max-width: 768px) {
+    .video-player-img {
+        display: flex;
+        margin-top: 50px;
+        width: 768px;
+        height: 418px;
+        margin-left: 0px;
+        margin-right: 0px;
+        background-image: url('./assets/img/video-player-small.jpg');
+    
+    }
 }
 
 .video-player-logo {
@@ -1260,6 +1298,16 @@ nav {
     background-color: Transparent;
     transition: 0.3s;
     cursor: pointer;
+    
+}
+
+@media (max-width: 768px) {
+    .video-player-logo {
+        top: 226px;
+        left: 350px;
+        width: 64.62px;
+        height: 64.69px;
+    }
 }
 
 .video-player-logo:hover {
@@ -1307,15 +1355,29 @@ nav {
     width: 273px;
 }
 
+@media (max-width: 768px) {
+    .wrapper-video-left {
+        width: 117px;
+    }
+}
+
 .wrapper-video-right-right {
     border-top: 2px solid #000000;
     width: 2px;
 }
 
+
 .wrapper-video-right {
     border-top: 2px solid #BDAE82;
     width: 271px;
 }
+
+@media (max-width: 768px) {
+    .wrapper-video-right {
+        width: 116px;
+    }
+}
+
 
 .wrapper-price {
     border-top: 2px solid #BDAE82;
