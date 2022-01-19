@@ -175,7 +175,7 @@ html {
 
 @media (max-width: 768px) {
     .header-container {
-        background: url('./assets/img/hero-small.jpg');
+        background: url('./assets/img/hero-small1.jpg');
         background-repeat: no-repeat;
         background-position: center 0;
         max-width: 768px;
@@ -209,7 +209,7 @@ html {
 
 @media (max-width: 768px) {
     .container-hero-section {
-        background: url('./assets/img/hero-small.jpg');
+        background: url('./assets/img/hero-small1.jpg');
         background-repeat: no-repeat;
         background-position: center -90px;
         max-width: 768px;
@@ -752,6 +752,14 @@ html {
     background-position: center center;
 }
 
+@media (max-width: 768px) {
+    .container-contacts-section {
+        margin-top: 80px;
+        height: 600px;
+        background: url('./assets/img/contacts-small.jpg');
+    }
+}
+
 .container-contacts-section-contacts {
     display: flex;
     flex-direction: column;
@@ -759,6 +767,16 @@ html {
     margin-left: 970px;
     width: 450px;
     height: 445px;
+}
+
+@media (max-width: 768px) {
+    .container-contacts-section-contacts {
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 60px;
+        width: 450px;
+        height: 429px;
+    }
 }
 
 .container-contacts-section-title {
@@ -772,6 +790,17 @@ html {
     color: #bdae82;
 }
 
+@media (max-width: 768px) {
+    .container-contacts-section-title {
+        width: 450px; 
+        height: 64px;
+        line-height: 64px;
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+
 /* FOOTER */
 
 .container-footer {
@@ -779,6 +808,15 @@ html {
     max-width: 1440px;
     height: 150px;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container-footer {
+        flex-direction: column;
+        align-items: center;
+        max-width: 768px;
+        height: 190px;
+    }
 }
 
 .container-footer-year {
@@ -796,6 +834,12 @@ html {
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .container-footer-year-copyright {
+        margin-left: 0px;
+    }
 }
 
 .container-footer-year-year {
