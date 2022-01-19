@@ -34,7 +34,13 @@ body {
     margin: 0 auto;
     padding: 0 0;
     background: #000000; 
-    
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
 }
 
 html {
@@ -70,6 +76,7 @@ html {
         height: 54px;
         margin-top: 80px;
         margin-left: 60px;
+        
        
     }
   }
@@ -156,6 +163,7 @@ html {
     margin: 0 auto;
     padding: 0 0;
    /* border: 1px solid red; */
+   
 }
 
 
@@ -172,6 +180,7 @@ html {
     background-position: center 0;
     max-width: 1440px;
     margin: 0 auto;
+    
 }
 
 @media (max-width: 768px) {
@@ -181,6 +190,7 @@ html {
         background-position: center 0;
         max-width: 768px;
         margin: 0 auto;
+        
     }
   }
 
@@ -190,6 +200,7 @@ html {
     /*width: 1440px;*/
     margin: 0 auto;
     padding: 20px 20px;
+    
 }
 
 @media (max-width: 768px) {
@@ -206,6 +217,7 @@ html {
     max-width: 1440px;
     height: 820px;
     padding-top: 160px;
+    
 }
 
 @media (max-width: 768px) {
@@ -217,6 +229,7 @@ html {
         height: 500px;
         padding-top: 78px;
       /* border: 1px solid red;*/
+      
     }
   }
 
@@ -231,7 +244,9 @@ html {
     font-size: 60px;
     line-height: 120px;
     color: #ffffff;
+    
 }
+
 
 @media (max-width: 768px) {
     .container-hero-title {
@@ -284,6 +299,7 @@ html {
     margin: 0 auto;
     margin-top: 100px;
     padding: 0 0;
+    
 }
 @media (max-width: 768px) {
     .container-skills-section-title {
@@ -765,7 +781,8 @@ html {
     display: flex;
     flex-direction: column;
     margin-top: 60px;
-    margin-left: 970px;
+    margin-left: auto;
+    margin-right: 20px;
     width: 450px;
     height: 445px;
 }
@@ -806,6 +823,7 @@ html {
 
 .container-footer {
     display: flex;
+    justify-content: space-between;
     max-width: 1440px;
     height: 150px;
     margin: 0 auto;
@@ -814,7 +832,7 @@ html {
 @media (max-width: 768px) {
     .container-footer {
         flex-direction: column;
-        
+        justify-content: flex-start;
         align-items: center;
         max-width: 768px;
         height: 190px;
@@ -914,7 +932,8 @@ html {
 
 
 .footer-link-rs {
-    margin-left: 426px;
+    margin: auto;
+    margin-left: 20px;
     width: 211px;
     height: 50px;
     line-height: 50px;
@@ -928,10 +947,11 @@ html {
 
 @media (max-width: 768px) {
     .footer-link-rs {
-        margin: auto;
-        margin-top: 3px;
+        margin: 0 auto;
+        margin-top: 16px;
         width: 210px;
         height: 24px;
+        line-height: 24px;
     }
 }
 
@@ -943,13 +963,16 @@ ul.container-footer-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 @media (max-width: 768px) {
     ul.container-footer-links {
         margin: 0px;
-        padding: 0px;
-        margin-top: 38px;
+        padding-left: 20px;
+        margin-top: 25px;
+        
     }
 }
 
@@ -961,7 +984,7 @@ ul.container-footer-links li {
 
 .container-footer-links-inst {
     margin-top: 4px;
-    margin-left: 366px;
+    margin-left: 0px;
     background-image: url('./assets/svg/inst.svg');
     background-size: contain;
     background-repeat: no-repeat;  
@@ -1022,6 +1045,7 @@ ul.container-footer-links li {
 .container-footer-links-pint {
     margin-top: 4px;
     margin-left: 20px;
+    margin-right: 20px;
     background-image: url('./assets/svg/pinterest.svg');
     background-size: contain;
     background-repeat: no-repeat;  
@@ -1212,6 +1236,7 @@ nav {
 @media (max-width: 768px) {
     .nav {
         display: none;
+        
     }
 }
 
@@ -1219,7 +1244,7 @@ nav {
     .nav {
         display: flex;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         z-index: 2;
         right: -620px;
         width: 620px;
@@ -1237,6 +1262,13 @@ nav {
         right: 0px;
         transition: 0.5s;
         
+    }
+}
+
+@media (max-width: 768px) {
+    .close {
+        
+        overflow-x: hidden;
     }
 }
 
@@ -1586,6 +1618,7 @@ nav {
     -ms-transform: translateY(13px) rotate(45deg);
     -o-transform: translateY(13px) rotate(45deg);
     transform: translateY(13px) rotate(45deg);
+    
   }
   
   #hamburger-1.is-active .line:nth-child(3){
@@ -1594,6 +1627,7 @@ nav {
     -ms-transform: translateY(-13px) rotate(-45deg);
     -o-transform: translateY(-13px) rotate(-45deg);
     transform: translateY(-13px) rotate(-45deg);
+    
   }
 
 
