@@ -605,6 +605,12 @@ html {
     padding: 0 0;
 }
 
+@media (max-width: 768px) {
+    .container-price-section-title {
+        margin-top: 80px; 
+    }
+}
+
 .container-price-section-title-textTitle {
     display: flex;
     justify-content: center;
@@ -616,6 +622,14 @@ html {
     font-weight: 700;
     font-size: 40px;
     color: #bdae82;
+}
+
+@media (max-width: 768px) {
+    .container-price-section-title-textTitle {
+        width: 122px; 
+        height: 80px;
+        font-size: 32px;
+    }
 }
 
 .container-price-section-items {
@@ -630,6 +644,15 @@ html {
     padding-left: 20px;
 }
 
+@media (max-width: 768px) {
+    .container-price-section-items {
+        justify-content: center;
+        padding-left: 0px;
+        gap: 50px;
+        margin-top: 50px;
+    }
+}
+
 .container-price-section-items-standard {
     display: flex;
     flex-direction: column;
@@ -638,6 +661,14 @@ html {
     height: 505px;
     border: 3px solid #bdae82;
 }
+
+@media (max-width: 768px) {
+    .container-price-section-items-standard {
+        width: 420px;
+        height: 505px;
+    }
+}
+
 
 .container-price-section-items-header {
     margin: 0;
@@ -686,6 +717,13 @@ html {
     border: 3px solid #bdae82;
 }
 
+@media (max-width: 768px) {
+    .container-price-section-items-premium {
+        width: 420px;
+        height: 505px;
+    }
+}
+
 .container-price-section-items-gold {
     display: flex;
     flex-direction: column;
@@ -693,6 +731,13 @@ html {
     width: 450px;
     height: 505px;
     border: 3px solid #bdae82;
+}
+
+@media (max-width: 768px) {
+    .container-price-section-items-gold {
+        width: 420px;
+        height: 505px;
+    }
 }
 
 /* CONTACTS */
@@ -1382,6 +1427,12 @@ nav {
 .wrapper-price {
     border-top: 2px solid #BDAE82;
     width: 279px;
+}
+
+@media (max-width: 768px) {
+    .wrapper-price {
+        width: 121px;
+    }
 }
 
 /* HAMBURGER */
