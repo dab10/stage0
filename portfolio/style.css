@@ -194,6 +194,8 @@ html {
     }
   }
 
+  
+
 .container-head {
     display: flex;
     max-width: 1440px;
@@ -232,6 +234,8 @@ html {
       
     }
   }
+
+ 
 
 
 .container-hero-title {
@@ -276,9 +280,11 @@ html {
 
 @media (max-width: 768px) {
     .container-hero-text {
+        display: flex;
         padding-top: 20px;
         margin-left: 60px;
-        width: 390px;
+        max-width: 390px;
+        width: 100%;
         height: 72px;
         line-height: 24px;
         font-family: 'Inter';
@@ -288,6 +294,21 @@ html {
     }
   }
 
+  @media (max-width: 480px) {
+    .container-hero-text {
+        display: flex;
+        padding-top: 20px;
+        margin-left: 60px;
+        max-width: 320px;
+        width: 100%;
+        height: 72px;
+        line-height: 24px;
+        font-family: 'Inter';
+        font-size: 20px;
+        font-weight: 400;
+        color: #ffffff;
+    }
+  }
 
 /* SKILLS: container-skills-section */
 
@@ -532,19 +553,37 @@ html {
 
 .container-portfolio-section-buttons {
     display: flex;
+    
     flex-wrap: wrap;
     gap: 5px;
     /* max-width: 1440px; */
     width: 895px;
+    
     margin: 0 auto;
     margin-top: 60px;
     padding: 0 0;
+    
 }
 
 @media (max-width: 768px) {
     .container-portfolio-section-buttons {
+        
+        
         margin-top: 50px;
         max-width: 445px
+        
+        
+        
+    }
+}
+@media (max-width: 500px) {
+    .container-portfolio-section-buttons {
+        
+        
+        margin-top: 50px;
+        max-width: 320px
+        
+        
         
     }
 }
@@ -1078,6 +1117,12 @@ ul.container-footer-links li {
     color: #bdae82;
     
 }
+@media (max-width: 480px) {
+    .input-email {
+        width:  320px;
+    }
+}
+
 
 .input-email::placeholder {
     font-family: inherit;
@@ -1100,6 +1145,12 @@ ul.container-footer-links li {
     color: #bdae82;
 }
 
+@media (max-width: 480px) {
+    .input-tel {
+        width:  320px;
+    }
+}
+
 .input-tel::placeholder {
     font-family: inherit;
     color: #bdae82;
@@ -1119,6 +1170,12 @@ ul.container-footer-links li {
     font-weight: 400;
     font-size: 20px;
     color: #bdae82;
+}
+
+@media (max-width: 480px) {
+    .input-textarea {
+        width:  320px;
+    }
 }
 
 .input-textarea::placeholder {
@@ -1433,8 +1490,16 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
+  
     
-    
+}
+
+@media (max-width: 768px) {
+    .video-player {
+        max-width: 768px;
+        width: 100%; 
+        
+    }
 }
 
 .video-player-img {
@@ -1452,9 +1517,12 @@ nav {
 @media (max-width: 768px) {
     .video-player-img {
         display: flex;
+        
         margin-top: 50px;
         width: 768px;
+        
         height: 418px;
+        
         margin-left: 0px;
         margin-right: 0px;
         background-image: url('./assets/img/video-player-small.jpg');
@@ -1480,8 +1548,19 @@ nav {
 
 @media (max-width: 768px) {
     .video-player-logo {
+        
         top: 226px;
         left: 350px;
+        width: 64.62px;
+        height: 64.69px;
+    }
+}
+
+@media (max-width: 400px) {
+    .video-player-logo {
+        
+        top: 226px;
+        left: 175px;
         width: 64.62px;
         height: 64.69px;
     }
@@ -1581,10 +1660,12 @@ nav {
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     
+    
   }
   
   @media (max-width: 768px) {
     .hamburger .line {
+        
         display: flex;
         margin: 10px auto;
         margin-left: 21px;
@@ -1610,23 +1691,27 @@ nav {
   
   #hamburger-1.is-active .line:nth-child(2){
     opacity: 0;
+    
   }
   
   #hamburger-1.is-active .line:nth-child(1){
+    position: fixed;
     
-    -webkit-transform: translateY(13px) rotate(45deg);
-    -ms-transform: translateY(13px) rotate(45deg);
-    -o-transform: translateY(13px) rotate(45deg);
-    transform: translateY(13px) rotate(45deg);
+    -webkit-transform: translateY(12px) rotate(45deg);
+    -ms-transform: translateY(12px) rotate(45deg);
+    -o-transform: translateY(12px) rotate(45deg);
+    transform: translateY(12px) rotate(45deg);
     
   }
   
   #hamburger-1.is-active .line:nth-child(3){
+    position: fixed;
     
-    -webkit-transform: translateY(-13px) rotate(-45deg);
-    -ms-transform: translateY(-13px) rotate(-45deg);
-    -o-transform: translateY(-13px) rotate(-45deg);
-    transform: translateY(-13px) rotate(-45deg);
+    
+    -webkit-transform: translateY(-12px) rotate(-45deg);
+    -ms-transform: translateY(-12px) rotate(-45deg);
+    -o-transform: translateY(-12px) rotate(-45deg);
+    transform: translateY(-12px) rotate(-45deg);
     
   }
 
