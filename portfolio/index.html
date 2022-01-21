@@ -8,20 +8,27 @@
     <link rel="icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+    <div class="grey"></div>
     <header class="header-container">
         <div class="container-head">
             <img src="./assets/svg/logo.svg" alt="logo" class="logo">
             <nav class="nav">
                 <ul class="nav-list">
-                  <li class="nav-li-skills"><a href="#skills" class="nav-link">Skills</a></li>
-                  <li class="nav-li-portfolio"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                  <li class="nav-li-video"><a href="#video" class="nav-link">Video</a></li>
-                  <li class="nav-li-price"><a href="#price" class="nav-link">Price</a></li>
-                  <li class="nav-li-contacts"><a href="#contacts" class="nav-link">Contacts</a></li>
+                    <li class="nav-li-skills"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-li-portfolio"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-li-video"><a href="#video" class="nav-link">Video</a></li>
+                    <li class="nav-li-price"><a href="#price" class="nav-link">Price</a></li>
+                    <li class="nav-li-contacts"><a href="#contacts" class="nav-link">Contacts</a></li>
                 </ul>
-            </nav>
+            </nav>           
             <div class="en-ru"><span class="switch-eng">en</span><span class="switch">/</span><span class="switch-ru">ru</span></div>
+            <div class="hamburger" id="hamburger-1">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
         </div>
     </header>
     <main>
@@ -87,7 +94,7 @@
                     <div class="wrapper-video-right"></div>
                 </div>
                 <div class="video-player">
-                    <img src="./assets/img/video-player.jpg" alt="video-player" class="video-player-img">
+                    <div class="video-player-img"></div>
                     <button class="video-player-logo"></button>
                 </div>
             </section>
@@ -161,6 +168,7 @@
             </ul>
         </div>
     </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
