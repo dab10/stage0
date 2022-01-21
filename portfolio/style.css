@@ -275,7 +275,7 @@ html {
         display: flex;
         padding-top: 20px;
         margin-left: 60px;
-        max-width: 320px;
+        max-width: 250px;
         width: 100%;
         height: 72px;
         line-height: 24px;
@@ -523,7 +523,7 @@ html {
     flex-wrap: wrap;
     gap: 5px;
     /* max-width: 1440px; */
-    width: 895px;
+    max-width: 895px;
     margin: 0 auto;
     margin-top: 60px;
     padding: 0 0;
@@ -670,7 +670,7 @@ html {
 
 @media (max-width: 768px) {
     .container-price-section-items-standard {
-        width: 420px;
+        max-width: 420px;
         height: 505px;
     }
 }
@@ -780,10 +780,23 @@ html {
         align-items: center;
         margin: 0 auto;
         margin-top: 60px;
-        width: 450px;
+        max-width: 450px;
+        width: 100%;
         height: 429px;
     }
 }
+
+@media (max-width: 480px) {
+    .container-contacts-section-contacts {
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 60px;
+        max-width: 320px;
+        width: 100%;
+        height: 429px;
+    }
+}
+
 
 .container-contacts-section-title {
     margin: 0 0;
@@ -798,7 +811,8 @@ html {
 
 @media (max-width: 768px) {
     .container-contacts-section-title {
-        width: 450px; 
+        max-width: 450px; 
+        width: 100%;
         height: 64px;
         line-height: 64px;
         font-size: 32px;
@@ -1060,7 +1074,7 @@ ul.container-footer-links li {
 }
 @media (max-width: 480px) {
     .input-email {
-        width:  320px;
+        max-width:  320px;
     }
 }
 
@@ -1420,7 +1434,8 @@ nav {
 .video-player-img {
     display: flex;
     margin-top: 60px;
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     height: 705px;
     margin-left: 20px;
     margin-right: 20px;
@@ -1464,7 +1479,7 @@ nav {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .video-player-logo {
         top: 226px;
         left: 175px;
