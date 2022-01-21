@@ -557,7 +557,14 @@ html {
     .container-portfolio-section-photo {
         justify-content: center;
         padding-left: 0px;
-    }
+        }
+}
+
+@media (max-width: 450px) {
+    .container-portfolio-section-photo {
+        max-width: 320px
+        width: 100%;
+        }
 }
 
 /* VIDEO: container-video-section */ 
@@ -1470,6 +1477,14 @@ nav {
     cursor: pointer;
 }
 
+@media (max-width: 769px) {
+    .video-player-logo {
+        
+        left: 347px;
+       
+    }
+}
+
 @media (max-width: 768px) {
     .video-player-logo {
         top: 226px;
@@ -1502,7 +1517,8 @@ nav {
 
 @media (max-width: 768px) {
     .wrapper-skills {
-        width: 117px;
+        max-width: 117px;
+        width: 100%;
     }
 }
 
@@ -1513,7 +1529,8 @@ nav {
 
 @media (max-width: 768px) {
     .wrapper-portfolio-left {
-        width: 90px;
+        max-width: 90px;
+        width: 100%;
     }
 }
 
@@ -1524,7 +1541,8 @@ nav {
 
 @media (max-width: 768px) {
     .wrapper-portfolio-right {
-        width: 89px;
+        max-width: 89px;
+        width: 100%;
     }
 }
 
