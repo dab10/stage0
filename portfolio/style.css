@@ -94,6 +94,11 @@ html {
     transition: 0.3s;
 }
 
+.button-portfolio-black.active {
+    color: #000000;
+    background-color: #bdae82;
+  }
+
 .button-portfolio-black:hover {
     color: #ffffff;
 }
