@@ -26,3 +26,5 @@ function closeMenu() {
   hamburger.classList.remove('is-active');
 }
 navLink.addEventListener('click', closeMenu);
+
+
