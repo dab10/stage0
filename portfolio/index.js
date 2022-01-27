@@ -59,19 +59,19 @@ preloadImages();
 // CHANGE COLOR BUTTON
 
 
-const portfolioBtnss = document.querySelectorAll('.button-portfolio-black');
-
-
 function changeClassActive (event) {
   if(event.target.classList.contains('button-portfolio-black')) {
-    
-    portfolioBtnss.forEach(() => classList.remove('active')) 
+    const portfolioBtnsWithActive = document.querySelectorAll('.button-portfolio-black')
+    portfolioBtnsWithActive.forEach((el) => el.classList.remove('active'));
     event.target.classList.add('active');
   }
 }
 portfolioBtns.addEventListener('click', changeClassActive)
 
-// for(let i = 1; i <= 6; i++) {
-//   const img = new Image();
-//   img.src = `./assets/img/summer/${i}.jpg`; 
-// }
+// EXPORT translate.js
+
+import i18Obj from './translate.js';
+
+console.log(i18Obj.en.skills);
+
+
