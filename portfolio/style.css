@@ -1174,7 +1174,7 @@ ul.container-footer-links li {
     font-family: 'Inter';
     font-weight: 700;
     font-size: 20px;
-    color: #bdae82;
+    color: #ffffff;
     transition: 0.3s;
 }
 
@@ -1186,8 +1186,12 @@ ul.container-footer-links li {
 
 .switch-eng:hover {
     cursor: pointer;
+    color: #bdae82;
 }
 
+.switch-eng.active-lang {
+    color: #bdae82;
+}
 
 .switch {
     margin-left: 9.4px;
@@ -1221,6 +1225,10 @@ ul.container-footer-links li {
 
 .switch-ru:hover {
     cursor: pointer;
+    color: #bdae82;
+}
+
+.switch-ru.active-lang {
     color: #bdae82;
 }
 

@@ -72,6 +72,36 @@ portfolioBtns.addEventListener('click', changeClassActive)
 
 import i18Obj from './translate.js';
 
-console.log(i18Obj.en.skills);
+// TRANSLATE EN/RU
+
+const langRu = document.querySelector('.switch-ru')
+const langEn = document.querySelector('.switch-eng')
+
+function getTranslate(lang) {
+  const words =  document.querySelectorAll('[data-i18]');
+  words.forEach((el) => {
+    if (el.placeholder === true) {
+      el.placeholder = i18Obj[lang][el.dataset.i18];
+    } else {
+      el.textContent = i18Obj[lang][el.dataset.i18];
+    }
+  });
+}
+
+langRu.addEventListener('click', () => {getTranslate('ru')})
+langEn.addEventListener('click', () => {getTranslate('en')})
 
 
+const langBtns = document.querySelector('.en-ru')
+
+function changeLangClassActive (event) {
+  if(event.target.classList.contains('switch-ru') || event.target.classList.contains('switch-eng')) {
+    const langRuBtnsWithActive = document.querySelector('.switch-ru')
+    langRuBtnsWithActive.classList.remove('active-lang')
+    const langEnBtnsWithActive = document.querySelector('.switch-eng')
+    langEnBtnsWithActive.classList.remove('active-lang')
+    event.target.classList.add('active-lang');
+  }
+}
+
+langBtns.addEventListener('click', changeLangClassActive)
