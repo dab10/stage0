@@ -128,7 +128,9 @@ const arrClass = [
   '.wrapper-price',
   '.container-price-section-items-header',
   '.container-price-section-items-text',
-
+  '.nav',
+  '.nav-link',
+  
 ]
 
 

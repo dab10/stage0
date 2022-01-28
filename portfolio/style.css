@@ -1338,6 +1338,13 @@ nav {
 }
 
 @media (max-width: 768px) {
+    .nav.light-theme {
+        background-color: #ffffff;
+    }
+}
+
+
+@media (max-width: 768px) {
     .open {
         margin-top: -20px;
         right: 0px;
@@ -1406,6 +1413,13 @@ nav {
         font-size: 35px;
     }
 }
+
+@media (max-width: 768px) {
+    .nav-link.light-theme {
+        color: #000000;
+    }
+}
+
 
 .nav-link:hover {
     color: #bdae82;
@@ -1733,16 +1747,27 @@ nav {
     -ms-transform: translateY(12px) rotate(45deg);
     -o-transform: translateY(12px) rotate(45deg);
     transform: translateY(12px) rotate(45deg);
+    background-color: #000000;
     
   }
   
+
   #hamburger-1.is-active .line:nth-child(3){
     position: fixed;
     -webkit-transform: translateY(-12px) rotate(-45deg);
     -ms-transform: translateY(-12px) rotate(-45deg);
     -o-transform: translateY(-12px) rotate(-45deg);
     transform: translateY(-12px) rotate(-45deg);
-    
-  }
+    background-color: #000000;
+}
+
+#hamburger-1.is-active:hover .line:nth-child(1){
+   background-color: #BDAE82;
+}
+
+#hamburger-1.is-active:hover .line:nth-child(3){
+    background-color: #BDAE82;
+ }
+
 
 
