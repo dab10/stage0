@@ -105,3 +105,50 @@ function changeLangClassActive (event) {
 }
 
 langBtns.addEventListener('click', changeLangClassActive)
+
+// CHANGE THEME
+
+const arrClass = [
+  '.container-skills-portfolio-video-price',
+  '.container-skills-section-title-textTitle', 
+  '.wrapper-skills',
+  '.container-skills-section-items-header',
+  '.container-skills-section-items-text',
+  '.container-portfolio-section-title-textTitle',
+  '.wrapper-portfolio-left',
+  '.wrapper-portfolio-right',
+  '.button-portfolio-black',
+  '.button-portfolio-black:hover',
+  '.button-portfolio-black.active',
+  '.container-video-section-title-textTitle',
+  '.wrapper-video-left',
+  '.wrapper-video-right-right',
+  '.wrapper-video-right',
+  '.container-price-section-title-textTitle',
+  '.wrapper-price',
+  '.container-price-section-items-header',
+  '.container-price-section-items-text',
+
+]
+
+
+
+
+function changeColours (arr) {
+const colors = document.querySelectorAll(arr)
+colors.forEach((el) => el.classList.add('light-theme'));
+}
+
+
+changeColours(arrClass)
+
+
+
+
+// .container-skills-section-title-textTitle.light-theme {
+//   color: #000000;
+// }
+
+// .container-skills-portfolio-video-price.light-theme {
+//   background-color: #ffffff;
+// }

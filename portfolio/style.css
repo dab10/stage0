@@ -94,12 +94,28 @@ html {
     transition: 0.3s;
 }
 
+.button-portfolio-black.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 .button-portfolio-black.active {
     color: #000000;
     background-color: #bdae82;
-  }
+}
+
+
 
 .button-portfolio-black:hover {
+    color: #ffffff;
+}
+
+.button-portfolio-black:hover.light-theme {
+    color: #ffffff;
+    background-color: #bdae82;
+}
+
+.button-portfolio-black:hover.active.light-theme {
     color: #ffffff;
 }
 
@@ -290,6 +306,16 @@ html {
         color: #ffffff;
     }
 }
+/* container-skills-portfolio-video-price */
+
+.container-skills-portfolio-video-price {
+    background-color: #000000;
+}
+
+.container-skills-portfolio-video-price.light-theme {
+    background-color: #ffffff;
+}
+
 
 /* SKILLS: container-skills-section */
 
@@ -320,6 +346,10 @@ html {
     font-weight: 700;
     font-size: 40px;
     color: #bdae82;
+}
+
+.container-skills-section-title-textTitle.light-theme {
+    color: #000000;
 }
 
 @media (max-width: 768px) {
@@ -386,6 +416,10 @@ html {
     }
 }
 
+.container-skills-section-items-header.light-theme {
+   color: #000000;
+}
+
 .container-skills-section-items-text {
     margin: 0;
     padding-top: 21px;  /* Why 21px?*/
@@ -405,6 +439,10 @@ html {
         height: 44px;
         line-height: 22px;
     }
+}
+
+.container-skills-section-items-text.light-theme {
+    color: #000000;
 }
 
 .container-skills-section-items-photo:nth-child(1) {
@@ -523,6 +561,10 @@ html {
     }
 }
 
+.container-portfolio-section-title-textTitle.light-theme {
+    color: #000000;
+}
+
 .container-portfolio-section-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -537,13 +579,13 @@ html {
 @media (max-width: 768px) {
     .container-portfolio-section-buttons {
         margin-top: 50px;
-        max-width: 445px
+        max-width: 445px;
     }
 }
 @media (max-width: 500px) {
     .container-portfolio-section-buttons {
         margin-top: 50px;
-        max-width: 320px
+        max-width: 320px;
     }
 }
 
@@ -551,7 +593,7 @@ html {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    max-width: 1440px
+    max-width: 1440px;
     margin: 0 auto;
     margin-top: 60px;
     padding: 0 0;
@@ -567,7 +609,7 @@ html {
 
 @media (max-width: 450px) {
     .container-portfolio-section-photo {
-        max-width: 320px
+        max-width: 320px;
         width: 100%;
         }
 }
@@ -612,6 +654,10 @@ html {
     }
 }
 
+.container-video-section-title-textTitle.light-theme {
+    color: #000000;
+}
+
 /* PRICE: container-price-section */
 
 .container-price-section-title {
@@ -651,6 +697,10 @@ html {
     }
 }
 
+.container-price-section-title-textTitle.light-theme {
+    color: #000000;
+}
+
 .container-price-section-items {
     display: flex;
     flex-wrap: wrap;
@@ -658,6 +708,7 @@ html {
     max-width: 1440px;
     margin: 0 auto;
     margin-top: 60px;
+    margin-bottom: 100px;
     padding: 0 0;
     padding-left: 20px;
 }
@@ -668,6 +719,7 @@ html {
         padding-left: 0px;
         gap: 50px;
         margin-top: 50px;
+        margin-bottom: 80px;
     }
 }
 
@@ -700,6 +752,10 @@ html {
     color: #ffffff;
 }
 
+.container-price-section-items-header.light-theme {
+    color: #000000;
+}
+
 .container-price-section-items-price {
     margin: 0;
     margin-top: 25px;
@@ -723,6 +779,10 @@ html {
     font-weight: 400;
     font-size: 18px;
     color: #ffffff;
+}
+
+.container-price-section-items-text.light-theme {
+    color: #000000;
 }
 
 .container-price-section-items-premium {
@@ -761,7 +821,7 @@ html {
 
 .container-contacts-section {
     display: flex;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     max-width: 1440px;
     height: 700px;
     background: url('./assets/img/contacts.jpg');
@@ -771,7 +831,7 @@ html {
 
 @media (max-width: 768px) {
     .container-contacts-section {
-        margin-top: 80px;
+       /* margin-top: 80px; */
         height: 600px;
         background: url('./assets/img/contacts-small.jpg');
     }
@@ -1535,6 +1595,10 @@ nav {
     }
 }
 
+.wrapper-skills.light-theme {
+    border-top: 2px solid #000000;
+}
+
 .wrapper-portfolio-left {
     border-top: 2px solid #BDAE82;
     width: 238px;
@@ -1545,6 +1609,10 @@ nav {
         max-width: 90px;
         width: 100%;
     }
+}
+
+.wrapper-portfolio-left.light-theme {
+    border-top: 2px solid #000000;
 }
 
 .wrapper-portfolio-right {
@@ -1559,6 +1627,10 @@ nav {
     }
 }
 
+.wrapper-portfolio-right.light-theme {
+    border-top: 2px solid #000000;
+}
+
 .wrapper-video-left {
     border-top: 2px solid #BDAE82;
     width: 273px;
@@ -1570,9 +1642,17 @@ nav {
     }
 }
 
+.wrapper-video-left.light-theme {
+    border-top: 2px solid #000000;
+}
+
 .wrapper-video-right-right {
     border-top: 2px solid #000000;
     width: 2px;
+}
+
+.wrapper-video-right-right.light-theme {
+    border-top: 2px solid #000000;
 }
 
 
@@ -1587,6 +1667,10 @@ nav {
     }
 }
 
+.wrapper-video-right.light-theme {
+    border-top: 2px solid #000000;
+}
+
 .wrapper-price {
     border-top: 2px solid #BDAE82;
     width: 279px;
@@ -1597,6 +1681,11 @@ nav {
         width: 121px;
     }
 }
+
+.wrapper-price.light-theme {
+    border-top: 2px solid #000000;
+}
+
 
 /* HAMBURGER */
 
