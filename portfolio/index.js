@@ -188,11 +188,6 @@ function getLocalStorage() {
     }
     return theme = themeLocal
   }
-  
- // if(localStorage.getItem('theme')) {
- //   const lang = localStorage.getItem('theme');
- //   getTranslate(lang);
- // }
 }
 
 window.addEventListener('load', getLocalStorage)
@@ -200,15 +195,6 @@ window.addEventListener('load', getLocalStorage)
 
 
 
-// function changeColours (arr) {
-//   const colors = document.querySelectorAll(arr)
-//   colors.forEach((el) => el.classList.add('light-theme'));
-//   }
 
-// .container-skills-section-title-textTitle.light-theme {
-//   color: #000000;
-// }
 
-// .container-skills-portfolio-video-price.light-theme {
-//   background-color: #ffffff;
-// }
+

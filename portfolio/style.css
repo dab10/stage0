@@ -49,7 +49,21 @@ html {
 
 /* BUTTONS */
 
+button:hover, button:focus {
+    transition:0.25s; 
+    color:#fff;
+}
+
+.pulse:hover, .pulse:focus{
+	box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+	animation: pulse 1s;
+}
+@keyframes pulse{
+	0%{box-shadow: 0 0 0 0 #bdae82}
+}
+
 .button-hero-gold {
+    
     padding: 8px 72px 7px 73px;
     width: 220px;
     height: 55px;
@@ -63,6 +77,8 @@ html {
     font-size: 20px;
     font-weight: 400;
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .button-hero-gold:hover {
@@ -1409,7 +1425,7 @@ nav {
     list-style: none;
     padding: 0 0;
     margin: 0 0;
-    width: 500px;
+    width: 520px; /*500*/
     height: 50px;
 }
 
@@ -1453,7 +1469,7 @@ nav {
 
 .nav-li-skills {
     margin-left: 30px;
-    width: 49px;
+    width: 60px; /*49*/
     height: 50px;
     line-height: 50px;
 }
@@ -1469,7 +1485,7 @@ nav {
 
 .nav-li-portfolio {
     margin-left: 30px;
-    width: 81px;
+    width: 101px; /*81*/
     height: 50px;
     line-height: 50px;
 }
