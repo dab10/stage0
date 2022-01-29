@@ -1,4 +1,4 @@
-console.log('Вёрстка соответствует макету. Ширина экрана 768px +48\nНи на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15\nНа ширине экрана 768рх и меньше реализовано адаптивное меню +22');
+console.log('Смена изображений в секции portfolio +25\nПеревод страницы на два языка +25\nПереключение светлой и тёмной темы +25\nДополнительный функционал: выбранный пользователем язык отображения страницы и светлая или тёмная тема сохраняются при перезагрузке страницы +5\nДополнительный функционал: сложные эффекты для кнопок при наведении и/или клике +5\nИтого: 85');
 
 // MENU 768PX
 
@@ -52,7 +52,6 @@ function preloadImages() {
     const img = new Image();
     img.src = `./assets/img/${item}/${i+1}.jpg`;
   });
-  
 }
 preloadImages();
 
@@ -66,6 +65,7 @@ function changeClassActive (event) {
     event.target.classList.add('active');
   }
 }
+
 portfolioBtns.addEventListener('click', changeClassActive)
 
 // EXPORT translate.js
@@ -164,6 +164,7 @@ function setLocalStorage() {
   localStorage.setItem('language', language);
   localStorage.setItem('theme', theme);
 }
+
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
@@ -181,7 +182,6 @@ function getLocalStorage() {
     const themeLocal = localStorage.getItem('theme');
     const colors = document.querySelectorAll(arrClass)
     if (themeLocal === 'light') {
-      
       colors.forEach((el) => el.classList.add('light-theme'));
     } else {
       colors.forEach((el) => el.classList.remove('light-theme'));
@@ -191,10 +191,4 @@ function getLocalStorage() {
 }
 
 window.addEventListener('load', getLocalStorage)
-
-
-
-
-
-
 
