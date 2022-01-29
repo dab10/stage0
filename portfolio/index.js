@@ -77,15 +77,19 @@ import i18Obj from './translate.js';
 const langRu = document.querySelector('.switch-ru')
 const langEn = document.querySelector('.switch-eng')
 
+let language = 'en'   // FOR LOCAL STORAGE
+
 function getTranslate(lang) {
   const words =  document.querySelectorAll('[data-i18]');
   words.forEach((el) => {
-    if (el.placeholder === true) {
+    if (el.placeholder) {
       el.placeholder = i18Obj[lang][el.dataset.i18];
     } else {
       el.textContent = i18Obj[lang][el.dataset.i18];
     }
   });
+  language = lang; // FOR LOCAL STORAGE
+  return language; // FOR LOCAL STORAGE
 }
 
 langRu.addEventListener('click', () => {getTranslate('ru')})
@@ -130,22 +134,76 @@ const arrClass = [
   '.container-price-section-items-text',
   '.nav',
   '.nav-link',
-  
+  '.switch-sun-moon',
+  '.hamburger',
+  '.line',
 ]
 
+const lightBtns = document.querySelector('.switch-sun-moon')
 
+let theme = 'dark' // FOR LOCAL STORAGE
 
+function changeColours (event) {
+  if(event.target.classList.contains('switch-sun-moon')) {
+    const colors = document.querySelectorAll(arrClass)
+    colors.forEach((el) => el.classList.toggle('light-theme'));
+  }
+  
+  if (nav.classList.contains('light-theme')) { // FOR LOCAL STORAGE
+    return theme = 'light';                    // FOR LOCAL STORAGE
+  } else {                                     // FOR LOCAL STORAGE
+    return theme = 'dark';                    // FOR LOCAL STORAGE
+  }                                           // FOR LOCAL STORAGE
+} 
 
-function changeColours (arr) {
-const colors = document.querySelectorAll(arr)
-colors.forEach((el) => el.classList.add('light-theme'));
+lightBtns.addEventListener('click', changeColours)
+
+// SAVE IN LOCAL STORAGE
+
+function setLocalStorage() {
+  localStorage.setItem('language', language);
+  localStorage.setItem('theme', theme);
+}
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+  if(localStorage.getItem('language')) {
+    const language = localStorage.getItem('language');
+    getTranslate(language);
+      if (language === 'ru') {
+       const activeLang = document.querySelector('.switch-ru')
+       const nonActiveLang = document.querySelector('.switch-eng')
+       nonActiveLang.classList.remove('active-lang');
+       activeLang.classList.add('active-lang');
+     }
+  }
+  if(localStorage.getItem('theme')) {
+    const themeLocal = localStorage.getItem('theme');
+    const colors = document.querySelectorAll(arrClass)
+    if (themeLocal === 'light') {
+      
+      colors.forEach((el) => el.classList.add('light-theme'));
+    } else {
+      colors.forEach((el) => el.classList.remove('light-theme'));
+    }
+    return theme = themeLocal
+  }
+  
+ // if(localStorage.getItem('theme')) {
+ //   const lang = localStorage.getItem('theme');
+ //   getTranslate(lang);
+ // }
 }
 
-
-changeColours(arrClass)
-
+window.addEventListener('load', getLocalStorage)
 
 
+
+
+// function changeColours (arr) {
+//   const colors = document.querySelectorAll(arr)
+//   colors.forEach((el) => el.classList.add('light-theme'));
+//   }
 
 // .container-skills-section-title-textTitle.light-theme {
 //   color: #000000;

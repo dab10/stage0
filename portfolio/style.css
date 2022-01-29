@@ -1310,6 +1310,32 @@ ul.container-footer-links li {
       contrast(87%);
 }
 
+/* SWITCH SUN/MOON */
+
+.switch-sun-moon {
+    background-image: url('./assets/svg/Sun.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;
+    margin-left: 25px;
+}
+
+.switch-sun-moon:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+}
+
+.switch-sun-moon.light-theme {
+    background-image: url('./assets/svg/Moon.svg');
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
 /* NAVIGATION NAV */
 nav {
     margin-left: auto;
@@ -1747,7 +1773,7 @@ nav {
     -ms-transform: translateY(12px) rotate(45deg);
     -o-transform: translateY(12px) rotate(45deg);
     transform: translateY(12px) rotate(45deg);
-    background-color: #000000;
+    
     
   }
   
@@ -1758,8 +1784,25 @@ nav {
     -ms-transform: translateY(-12px) rotate(-45deg);
     -o-transform: translateY(-12px) rotate(-45deg);
     transform: translateY(-12px) rotate(-45deg);
+    
+}
+
+#hamburger-1.is-active.light-theme .line:nth-child(1).light-theme{
     background-color: #000000;
 }
+
+#hamburger-1.is-active.light-theme .line:nth-child(3).light-theme{
+    background-color: #000000;
+}
+
+#hamburger-1.is-active:hover.light-theme .line:nth-child(1).light-theme{
+    background-color: #BDAE82;
+}
+
+#hamburger-1.is-active:hover.light-theme .line:nth-child(3).light-theme{
+    background-color: #BDAE82;
+}
+
 
 #hamburger-1.is-active:hover .line:nth-child(1){
    background-color: #BDAE82;
