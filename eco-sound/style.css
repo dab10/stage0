@@ -47,13 +47,22 @@ body {
     cursor: pointer;
     width: 40px;
     height: 40px;
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    filter: filter: invert(1%) sepia(4%) saturate(1170%) hue-rotate(200deg) brightness(115%) contrast(100%);
 }
 
 
 .container-header-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.container-header-logo.active {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.container-header-logo:hover.active {
     filter: invert(1%) sepia(4%) saturate(1170%) hue-rotate(200deg) brightness(115%) contrast(100%);
 }
+
 
 .container-header-item {
     display: flex;
@@ -72,6 +81,11 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.container-header-item-bird.active {
+    color: #bdae82;
+}
+
 
 .container-header-item-bird:hover {
     color: #bdae82;
