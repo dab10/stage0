@@ -15,20 +15,69 @@
 }
 
 body {
-    font-family: 'Inter';
+    max-width: 1920px;
     background: #000000;
+    font-family: 'Inter';
+    font-size: 20px;
+    border: 1px solid green;
 }
 
 /* HEADER */
 
-.header {
+.container-header {
     display: flex;
     max-width: 1920px;
     margin: 0 auto;
-    min-height: 60px;
-    color: #ffffff;
+    padding: 15px 15px 15px 35px;
     border: 1px solid red;
-    background-image: url('./assets/svg/rss.svg');
-    background-size: 62px 50px;
-    background-repeat: no-repeat;
+}
+
+.container-header-logo {
+    background-image: url('./assets/svg/logo1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+
+.container-header-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+}
+
+.container-header-item {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    list-style: none;
+    padding: 0 0;
+    margin: 0 0;
+    margin-left: auto;
+}
+
+.container-header-item-bird {
+    display: flex;
+    padding: 0 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container-header-item-bird:hover {
+    color: #bdae82;
+}
+
+/* MAIN */
+
+.container-main {
+    
+    max-width: 1920px;
+    border: 1px solid blue;
+}
+
+.container-main-image {
+    max-width: 100%;
 }
