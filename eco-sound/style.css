@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url("./assets/fonts/Merriweather-Regular.ttf");
+    src: url("./assets/fonts/Inter-Regular.ttf");
     font-weight: 400;
 }
 
@@ -15,21 +15,28 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0 auto;
     max-width: 1920px;
     background: #000000;
     font-family: 'Inter';
     font-size: 20px;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
 }
 
 /* HEADER */
 
 .container-header {
     display: flex;
+    width: calc(100% - 60px);
     max-width: 1920px;
+    height: 60px;
     margin: 0 auto;
-    padding: 15px 15px 15px 35px;
-    border: 1px solid red;
+    padding: 10px 15px 10px 35px;
+    /*border: 1px solid red;*/
 }
 
 .container-header-logo {
@@ -38,14 +45,14 @@ body {
     background-repeat: no-repeat;  
     transition: 0.3s;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 
 .container-header-logo:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-      contrast(87%);
+    filter: invert(1%) sepia(4%) saturate(1170%) hue-rotate(200deg) brightness(115%) contrast(100%);
 }
 
 .container-header-item {
@@ -73,11 +80,89 @@ body {
 /* MAIN */
 
 .container-main {
+    display: flex;
+    position: relative;
     
+    flex-grow: 1;
+    flex-shrink: 1;
     max-width: 1920px;
-    border: 1px solid blue;
+    height: calc(100vh - 120px);
+    
+   /* border: 1px solid blue;*/
 }
+
+
 
 .container-main-image {
     max-width: 100%;
+   
+    
+}
+
+.container-main-play {
+    position: absolute;
+    top: calc(100%/2.5);
+    left: calc(100%/2.2);
+    width: 160px;
+    height: 160px;
+    background-image: url("./assets/svg/play.svg");
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-color: transparent;
+    border: 0;  
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container-main-play:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+
+/* FOOTER */
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 60px);
+    max-width: 1920px;
+    height: 60px;
+    color: #ffffff;
+   /* border: 1px solid brown;*/
+}
+
+.footer-container-copy {
+    color: #ffffff;
+    padding: 0px 10px 0px 20px;
+}
+
+.footer-container-year {
+    color: #ffffff;
+    padding: 0px 10px;
+}
+
+.footer-container-github {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.footer-container-github:hover {
+    color: #bdae82;
+}
+
+.footer-container-rss {
+    margin-left: auto;
+}
+
+.footer-container-rss-image {
+    height: 50px;
+    padding: 0px 60px;
+    transition: 0.3s;
+}
+
+.footer-container-rss-image:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
 }
