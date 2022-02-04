@@ -115,7 +115,7 @@ body {
 }
 
 .container-main-play:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    filter: brightness(92%);
 }
 
 
@@ -163,6 +163,5 @@ body {
 }
 
 .footer-container-rss-image:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-      contrast(87%);
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
