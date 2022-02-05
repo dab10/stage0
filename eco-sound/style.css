@@ -24,7 +24,6 @@ body {
     background: #000000;
     font-family: 'Inter';
     font-size: 20px;
-    /*border: 1px solid green;*/
 }
 
 /* HEADER */
@@ -36,7 +35,6 @@ body {
     height: 60px;
     margin: 0 auto;
     padding: 10px 15px 10px 35px;
-    /*border: 1px solid red;*/
 }
 
 .container-header-logo {
@@ -50,7 +48,6 @@ body {
     filter: filter: invert(1%) sepia(4%) saturate(1170%) hue-rotate(200deg) brightness(115%) contrast(100%);
 }
 
-
 .container-header-logo:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
@@ -63,8 +60,7 @@ body {
     filter: invert(1%) sepia(4%) saturate(1170%) hue-rotate(200deg) brightness(115%) contrast(100%);
 }
 
-
-.container-header-item {
+.container-header-item, ul {
     display: flex;
     justify-content: row;
     align-items: center;
@@ -86,7 +82,6 @@ body {
     color: #bdae82;
 }
 
-
 .container-header-item-bird:hover {
     color: #bdae82;
 }
@@ -96,21 +91,14 @@ body {
 .container-main {
     display: flex;
     position: relative;
-    
     flex-grow: 1;
     flex-shrink: 1;
     max-width: 1920px;
     height: calc(100vh - 120px);
-    
-   /* border: 1px solid blue;*/
 }
-
-
 
 .container-main-image {
     max-width: 100%;
-   
-    
 }
 
 .container-main-play {
@@ -132,7 +120,7 @@ body {
 
 .pause {  
     background-image: url("./assets/svg/pause.svg");
-  }
+}
 
 .container-main-play:hover {
     filter: brightness(92%);
@@ -163,8 +151,6 @@ body {
     background: #000000;
 }
 
-
-
 /* FOOTER */
 
 .footer-container {
@@ -174,7 +160,6 @@ body {
     max-width: 1920px;
     height: 60px;
     color: #ffffff;
-   /* border: 1px solid brown;*/
 }
 
 .footer-container-copy {
