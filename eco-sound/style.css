@@ -116,7 +116,7 @@ body {
 .container-main-play {
     position: absolute;
     top: calc(100%/2.5);
-    left: calc(100%/2.2);
+    left: calc(100%/2.25);
     width: 160px;
     height: 160px;
     background-image: url("./assets/svg/play.svg");
@@ -127,6 +127,10 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.pause {  
+    background-image: url("./assets/svg/pause.svg");
+  }
 
 .container-main-play:hover {
     filter: brightness(92%);
