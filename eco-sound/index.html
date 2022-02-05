@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-sound</title>
+    <link rel="icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="container-header">
+        <img src="./assets/svg/logo1.svg" alt="logo" class="container-header-logo active" data-bird="forest">
+        <nav class="container-header-item">
+            <ul>
+                <li class="container-header-item-bird" data-bird="solovey">Соловей</li>
+                <li class="container-header-item-bird" data-bird="drozd">Дрозд</li>
+                <li class="container-header-item-bird" data-bird="zarynka">Малиновка</li>
+                <li class="container-header-item-bird" data-bird="javoronok">Жаворонок</li>
+                <li class="container-header-item-bird" data-bird="slavka">Славка</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container-main">
+        <button class="container-main-play"></button>
+        <img src="./assets/img/forest.jpg" alt="forest" class="container-main-image">
+        <audio src="./assets/audio/forest.mp3"></audio>
+        <input type="range" value="50" min="0" max="100" step="1" class="container-main-volume">
+    </main>
+    <footer class="footer-container">
+        <div class="footer-container-copy">&#169;</div>
+        <div class="footer-container-year">2022</div>
+        <div>
+            <a class="footer-container-github" href="https://github.com/dab10">github</a>
+        </div>
+        <div class="footer-container-rss">
+            <a href="https://rs.school/js-stage0/">
+                <img class="footer-container-rss-image" src="./assets/svg/rss.svg" alt="rsschool">
+            </a>
+        </div>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>
