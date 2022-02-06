@@ -1,0 +1,78 @@
+/* FONT */
+
+@font-face {
+    font-family: 'Inter';
+    src: url("./assets/fonts/Inter-Regular.ttf");
+    font-weight: 400;
+}
+
+/* ALL */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* BODY */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 1920px;
+    background: #000000;
+    font-family: 'Inter';
+    font-size: 20px;
+}
+
+/* MAIN */
+
+
+/* FOOTER */
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 60px;
+    color: #ffffff;
+}
+
+.footer-container-copy {
+    color: #ffffff;
+    padding: 0px 10px 0px 20px;
+}
+
+.footer-container-year {
+    color: #ffffff;
+    padding: 0px 10px;
+}
+
+.footer-container-github {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.footer-container-github:hover {
+    color: #bdae82;
+}
+
+.footer-container-rss {
+    margin-left: auto;
+}
+
+.footer-container-rss-image {
+    height: 50px;
+    padding: 0px 20px;
+    transition: 0.3s;
+}
+
+.footer-container-rss-image:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
