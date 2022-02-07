@@ -28,8 +28,46 @@ body {
     font-size: 20px;
 }
 
+p {
+    padding: 0 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
 /* MAIN */
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    flex-grow: 1;
+
+    
+}
+
+.main-container-image {
+    max-width: 480px;
+    max-height: 320px;
+}
+
+.main-container-button {
+    width: 220px;
+    height: 55px;
+    background-color: #aaaaaa;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.main-container-button:hover {
+    color: #000000;
+
+}
 
 /* FOOTER */
 
