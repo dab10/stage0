@@ -69,6 +69,46 @@ p {
 
 }
 
+.en-ru {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+}
+
+.switch-eng {
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.switch-eng:hover {
+    color: #bdae82;
+}
+
+.switch-eng.active-lang {
+    color: #bdae82;
+}
+
+.switch {
+    color: #ffffff;
+}
+
+.switch-ru {
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.switch-ru:hover {
+    color: #bdae82;
+}
+
+.switch-ru.active-lang {
+    color: #bdae82;
+}
+
 /* FOOTER */
 
 .footer-container {
