@@ -1,38 +1,4 @@
-// GET DATA (QUOTE, AUTHOR)
-
-const url = "https://type.fit/api/quotes";
-
-async function getData() {
-  const res = await fetch(url);
-  const data = await res.json();
-  showData(data);
-}
-getData();
-
-async function getQuotes() {
-  const quotes = "quotes.json";
-  const res = await fetch(quotes);
-  const data = await res.json();
-  showData(data);
-}
-getQuotes();
-
-// SHOW DATA
-
-function showData(data) {
-  let i = randomInteger(0, data.length - 1);
-  elem1.textContent = data[i].text;
-  elem2.textContent = data[i].author;
-}
-
-// RANDOM INTEGER
-
-function randomInteger(min, max) {
-  let rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-}
-
-// GET IMAGE xqNFp0Fu0t4VyJATPOulLMm6mwAXElMsNmBgv71m06c YuvgmQ1FcPl6zm_qLEwC4yuzrijLZs3U4DfVSaPTsQQ
+// GET IMAGE
 
 const urlImage =
   "https://api.unsplash.com/photos/random?query=philosophy&;orientation=landscape&;client_id=xqNFp0Fu0t4VyJATPOulLMm6mwAXElMsNmBgv71m06c";
@@ -50,7 +16,7 @@ function showImage(image) {
   document.getElementById("randomImage").src = image.urls.regular;
 }
 
-// BUTTON FOR CHANGE DATA, IMAGE, DELAY BETWEEN REQUEST
+// BUTTON FOR CHANGE DATA, IMAGE, DELAY BETWEEN REQUESTS
 
 const quoteBtn = document.querySelector(".main-container-button");
 
@@ -117,6 +83,7 @@ function changeLangClassActive(event) {
 }
 
 langBtns.addEventListener("click", changeLangClassActive);
+langBtns.addEventListener("click", getData);
 
 // SAVE IN LOCAL STORAGE
 
@@ -138,3 +105,37 @@ function getLocalStorage() {
 }
 
 window.addEventListener("load", getLocalStorage);
+window.addEventListener("load", getData);
+
+// GET DATA (QUOTE, AUTHOR)
+
+const url = "https://type.fit/api/quotes";
+
+async function getData() {
+  if (language === "en") {
+    const res = await fetch(url);
+    const data = await res.json();
+    showData(data);
+  } else if (language === "ru") {
+    const quotes = "quotes.json";
+    const res = await fetch(quotes);
+    const data = await res.json();
+
+    showData(data);
+  }
+}
+
+// SHOW DATA
+
+function showData(data) {
+  let i = randomInteger(0, data.length - 1);
+  elem1.textContent = data[i].text;
+  elem2.textContent = data[i].author;
+}
+
+// RANDOM INTEGER
+
+function randomInteger(min, max) {
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
