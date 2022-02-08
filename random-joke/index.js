@@ -84,6 +84,7 @@ function changeLangClassActive(event) {
 
 langBtns.addEventListener("click", changeLangClassActive);
 langBtns.addEventListener("click", getData);
+langBtns.addEventListener("click", getImage);
 
 // SAVE IN LOCAL STORAGE
 
