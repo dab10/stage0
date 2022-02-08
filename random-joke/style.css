@@ -48,8 +48,8 @@ p {
 }
 
 .main-container-image {
-    max-width: 480px;
-    max-height: 320px;
+    width: 480px;
+    height: 320px;
 }
 
 .main-container-button {

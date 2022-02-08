@@ -1,7 +1,5 @@
 // GET DATA (QUOTE, AUTHOR)
 
-//let language = 'en'   // FOR LOCAL STORAGE
-
 const url = "https://type.fit/api/quotes";
 
 async function getData() {
@@ -9,21 +7,15 @@ async function getData() {
   const data = await res.json();
   showData(data);
 }
-
+getData();
 
 async function getQuotes() {
-    const quotes = "quotes.json";
-    const res = await fetch(quotes);
-    const data = await res.json();
-    showData(data);
-  }
-
-
-    getData();
-
-    getQuotes();
-
-
+  const quotes = "quotes.json";
+  const res = await fetch(quotes);
+  const data = await res.json();
+  showData(data);
+}
+getQuotes();
 
 // SHOW DATA
 
@@ -58,93 +50,91 @@ function showImage(image) {
   document.getElementById("randomImage").src = image.urls.regular;
 }
 
-// BUTTON FOR CHANGE DATA, IMAGE 
+// BUTTON FOR CHANGE DATA, IMAGE, DELAY BETWEEN REQUEST
 
-const quoteBtn = document.querySelector('.main-container-button');
+const quoteBtn = document.querySelector(".main-container-button");
 
-function disableNextButton() {
-    while (document.getElementById("randomImage").complete === false) {
-        quoteBtn.setAttribute('disabled', 'disabled');
+function disableButton() {
+  let timeLeft = 2;
+  quoteBtn.setAttribute("disabled", "disabled");
+  document.getElementById("countdown").textContent = "(3)";
+  var timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").textContent = "";
+      quoteBtn.removeAttribute("disabled");
+    } else {
+      document.getElementById("countdown").textContent = `(${timeLeft})`;
     }
+    timeLeft -= 1;
+  }, 1000);
 }
-// function makeMoney()
-// {
-//     quoteBtn.setAttribute('disabled', 'disabled');
-//     setTimeout(
-//         function()
-//         {
-//             quoteBtn.removeAttribute('disabled');
-//         }
-//         , 500)
-    
-// }
 
-
-quoteBtn.addEventListener('click', getData);
-quoteBtn.addEventListener('click', getImage);
-quoteBtn.addEventListener('click', disableNextButton);
+quoteBtn.addEventListener("click", disableButton);
+quoteBtn.addEventListener("click", getData);
+quoteBtn.addEventListener("click", getImage);
 
 // EXPORT translate.js
 
-import i18Obj from './translate.js';
+import i18Obj from "./translate.js";
 
 // TRANSLATE EN/RU
 
-const langRu = document.querySelector('.switch-ru')
-const langEn = document.querySelector('.switch-eng')
+const langRu = document.querySelector(".switch-ru");
+const langEn = document.querySelector(".switch-eng");
 
-let language = 'en'   // FOR LOCAL STORAGE
+let language = "en"; // FOR LOCAL STORAGE
 
 function getTranslate(lang) {
-  const words =  document.querySelectorAll('[data-i18]');
+  const words = document.querySelectorAll("[data-i18]");
   words.forEach((el) => {
-    el.textContent = i18Obj[lang][el.dataset.i18];
+    el.innerHTML = i18Obj[lang][el.dataset.i18];
   });
   language = lang; // FOR LOCAL STORAGE
   return language; // FOR LOCAL STORAGE
 }
 
-langRu.addEventListener('click', () => {getTranslate('ru')})
-langEn.addEventListener('click', () => {getTranslate('en')})
+langRu.addEventListener("click", () => {
+  getTranslate("ru");
+});
+langEn.addEventListener("click", () => {
+  getTranslate("en");
+});
 
+const langBtns = document.querySelector(".en-ru");
 
-
-const langBtns = document.querySelector('.en-ru')
-
-function changeLangClassActive (event) {
-  if(event.target.classList.contains('switch-ru') || event.target.classList.contains('switch-eng')) {
-    const langRuBtnsWithActive = document.querySelector('.switch-ru')
-    langRuBtnsWithActive.classList.remove('active-lang')
-    const langEnBtnsWithActive = document.querySelector('.switch-eng')
-    langEnBtnsWithActive.classList.remove('active-lang')
-    event.target.classList.add('active-lang');
+function changeLangClassActive(event) {
+  if (
+    event.target.classList.contains("switch-ru") ||
+    event.target.classList.contains("switch-eng")
+  ) {
+    const langRuBtnsWithActive = document.querySelector(".switch-ru");
+    langRuBtnsWithActive.classList.remove("active-lang");
+    const langEnBtnsWithActive = document.querySelector(".switch-eng");
+    langEnBtnsWithActive.classList.remove("active-lang");
+    event.target.classList.add("active-lang");
   }
 }
 
-langBtns.addEventListener('click', changeLangClassActive)
+langBtns.addEventListener("click", changeLangClassActive);
 
 // SAVE IN LOCAL STORAGE
 
 function setLocalStorage() {
-    localStorage.setItem('language', language);
-  }
-
-  window.addEventListener('beforeunload', setLocalStorage)
-
-function getLocalStorage() {
-    const language = localStorage.getItem('language');
-    getTranslate(language);
-      if (language === 'ru') {
-       const activeLang = document.querySelector('.switch-ru')
-       const nonActiveLang = document.querySelector('.switch-eng')
-       nonActiveLang.classList.remove('active-lang');
-       activeLang.classList.add('active-lang');
-     }
-  
+  localStorage.setItem("language", language);
 }
 
-window.addEventListener('load', getLocalStorage)
+window.addEventListener("beforeunload", setLocalStorage);
 
+function getLocalStorage() {
+  const language = localStorage.getItem("language");
+  getTranslate(language);
+  if (language === "ru") {
+    const activeLang = document.querySelector(".switch-ru");
+    const nonActiveLang = document.querySelector(".switch-eng");
+    nonActiveLang.classList.remove("active-lang");
+    activeLang.classList.add("active-lang");
+  }
+}
 
-
-
+window.addEventListener("load", getLocalStorage);
