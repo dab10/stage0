@@ -21,9 +21,9 @@ function showImage(image) {
 const quoteBtn = document.querySelector(".main-container-button");
 
 function disableButton() {
-  let timeLeft = 2;
+  let timeLeft = 1;
   quoteBtn.setAttribute("disabled", "disabled");
-  document.getElementById("countdown").textContent = "(3)";
+  document.getElementById("countdown").textContent = "(2)";
   var timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
