@@ -42,9 +42,7 @@ function randomInteger(min, max) {
 	return Math.floor(rand);
   }
   
-
-
-
+// GAME
 
 const cells = document.querySelectorAll('.cell');
 startGame();
@@ -99,7 +97,7 @@ function gameOver(gameWon) {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	declareWinner(gameWon.player == huPlayer ? `Win X. Moves: ${8-(emptySquares().length - 1)}` : `Win O. Moves: ${8-(emptySquares().length - 1)}`);
 }
 
 function declareWinner(who) {
@@ -121,7 +119,7 @@ function checkTie() {
 			cells[i].style.backgroundColor = "green";
 			cells[i].removeEventListener('click', turnClick, false);
 		}
-		declareWinner("Tie Game!")
+		declareWinner(`Tie Game. Moves: ${8-(emptySquares().length - 1)}`)
 		return true;
 	}
 	return false;
