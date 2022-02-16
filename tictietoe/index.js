@@ -20,6 +20,7 @@ function chooseTic() {
 	huPlayer = 'X';
 	aiPlayer = 'O';
 	document.querySelector(".startGameWindow").style.display = "none";
+	document.querySelector("table").style.display = "block";
 	return huPlayer, aiPlayer;
 }
 
@@ -29,6 +30,7 @@ function chooseToe() {
 	huPlayer = 'O';
 	aiPlayer = 'X';
 	document.querySelector(".startGameWindow").style.display = "none";
+	document.querySelector("table").style.display = "block";
 	turn(randomInteger(0, 8), aiPlayer);
 	return huPlayer, aiPlayer;
 }
@@ -52,6 +54,7 @@ startGame();
 function startGame() {
 	document.querySelector(".endgame").style.display = "none";
 	document.querySelector(".startGameWindow").style.display = "block";
+	document.querySelector("table").style.display = "none";
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
@@ -65,7 +68,8 @@ function turnClick(square) {
 		turn(square.target.id, huPlayer)
 		
 		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
-		if (emptySquares().length == 0) checkTie();
+		if (emptySquares().length == 0) (checkWin(origBoard, aiPlayer) || checkTie());
+		
 	}
 }
 
@@ -74,7 +78,11 @@ function turn(squareId, player) {
 	document.getElementById(squareId).innerText = player;
 	let gameWon = checkWin(origBoard, player)
 	if (gameWon) gameOver(gameWon)
+	
 }
+
+
+
 
 function checkWin(board, player) {
 	let plays = board.reduce((a, e, i) =>
@@ -86,10 +94,15 @@ function checkWin(board, player) {
 			break;
 		}
 	}
+	
 	return gameWon;
+	
 }
 
+
+
 function gameOver(gameWon) {
+	let emptySquaresLocal = 8-(emptySquares().length - 1);
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
 			gameWon.player == huPlayer ? "blue" : "red";
@@ -97,8 +110,41 @@ function gameOver(gameWon) {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? `Win X. Moves: ${8-(emptySquares().length - 1)}` : `Win O. Moves: ${8-(emptySquares().length - 1)}`);
+	declareWinner(gameWon.player == huPlayer ? `Win ${gameWon.player}. Moves: ${emptySquaresLocal}` : `Win ${gameWon.player}. Moves: ${emptySquaresLocal}`);
+	resultTable(gameWon.player, emptySquaresLocal);
 }
+
+
+function resultTable(player, numberMove) {
+	const result = {userName: player, score: numberMove}
+	const savedScores = localStorage.getItem('highScore') || '[]'
+	const highScores = [...JSON.parse(savedScores), result]
+	localStorage.setItem('highScore', JSON.stringify(highScores))
+	let results = JSON.parse( localStorage.highScore );
+	arrPlayer = []
+	arrMoves = []
+	for (let keys in results) {
+		arrPlayer.push(results[keys]['userName']);
+		arrMoves.push(results[keys]['score']);
+	}
+	console.log(arrPlayer)
+	console.log(arrMoves)
+	for (let i = (arrPlayer.length - 10); i < arrPlayer.length; i++) {
+		if ((arrPlayer.length - 10) < 0) {
+			continue
+		} else if ((arrPlayer.length - 10) >= 0) {
+			
+			tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
+		}
+	}
+	
+	// let result = {userName: player, move: numberMove}
+	// let arr = []
+	// arr.push(result);
+	// console.log(arr);
+}
+
+
 
 function declareWinner(who) {
 	document.querySelector(".endgame").style.display = "block";
@@ -114,12 +160,14 @@ function bestSpot() {
 }
 
 function checkTie() {
+	let emptySquaresLocal = 8-(emptySquares().length - 1);
 	if (emptySquares().length == 0) {
 		for (var i = 0; i < cells.length; i++) {
 			cells[i].style.backgroundColor = "green";
 			cells[i].removeEventListener('click', turnClick, false);
 		}
-		declareWinner(`Tie Game. Moves: ${8-(emptySquares().length - 1)}`)
+		declareWinner(`Tie Game. Moves: ${emptySquaresLocal}`)
+		resultTable('Tie', emptySquaresLocal);
 		return true;
 	}
 	return false;

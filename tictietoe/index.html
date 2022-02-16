@@ -9,27 +9,33 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <main>
+    <main class="container">
         <div class="startGameWindow">
             <div class="textStart">Choose your side:</div>
             <button class="tic">X</button>
             <button class="toe">O</button>
         </div>
-        <table>
+        <table class="table">
             <tr>
-                <td class="cell" id="0"></td>
-                <td class="cell" id="1"></td>
-                <td class="cell" id="2"></td>
+                <td class="cell td" id="0"></td>
+                <td class="cell td" id="1"></td>
+                <td class="cell td" id="2"></td>
             </tr>
             <tr>
-                <td class="cell" id="3"></td>
-                <td class="cell" id="4"></td>
-                <td class="cell" id="5"></td>
+                <td class="cell td" id="3"></td>
+                <td class="cell td" id="4"></td>
+                <td class="cell td" id="5"></td>
             </tr>
             <tr>
-                <td class="cell" id="6"></td>
-                <td class="cell" id="7"></td>
-                <td class="cell" id="8"></td>
+                <td class="cell td" id="6"></td>
+                <td class="cell td" id="7"></td>
+                <td class="cell td" id="8"></td>
+            </tr>
+        </table>
+        <table class="result" id="tableResult">
+            <tr class="result-tr">
+                <td class="result-td">winner</td>
+                <td class="result-td">moves</td>
             </tr>
         </table>
         <div class="endgame">

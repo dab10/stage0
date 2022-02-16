@@ -29,47 +29,13 @@ body {
 
 /* MAIN */
 
-td {
-	border:  2px solid #333;
-	height:  100px;
-	width:  100px;
-	text-align:  center;
-	vertical-align:  middle;
-	font-size:  70px;
-	cursor: pointer;
-}
-
-table {
-	border-collapse: collapse;
-	position: absolute;
-	left: 50%;
-	margin-left: -155px;
-	top: 50px;
-}
-
-table tr:first-child td {
-	border-top: 0;
-}
-
-table tr:last-child td {
-	border-bottom: 0;
-}
-
-table tr td:first-child {
-	border-left: 0;
-}
-
-table tr td:last-child {
-	border-right: 0;
-}
-
 .startGameWindow {
     display: none;
     width: 200px;
     top: 120px;
     background-color: rgba(205,133,63, 0.8);
     position: absolute;
-    z-index: 1;
+    
     left: 50%;
     margin-left: -100px;
     padding-top: 50px;
@@ -79,6 +45,43 @@ table tr td:last-child {
     color: white;
     font-size: 2em;
 }
+
+.td {
+	border:  2px solid #333;
+	height:  100px;
+	width:  100px;
+	text-align:  center;
+	vertical-align:  middle;
+	font-size:  70px;
+	cursor: pointer;
+}
+
+.table {
+    display: block;
+	border-collapse: collapse;
+	position: absolute;
+	left: 50%;
+	margin-left: -155px;
+	top: 50px;
+}
+
+.table tr:first-child td {
+	border-top: 0;
+}
+
+.table tr:last-child td {
+	border-bottom: 0;
+}
+
+.table tr td:first-child {
+	border-left: 0;
+}
+
+.table tr td:last-child {
+	border-right: 0;
+}
+
+
 
 .endgame {
   display: none;
@@ -94,6 +97,24 @@ table tr td:last-child {
   border-radius: 5px;
   color: white;
   font-size: 2em;
+}
+
+.footer-container {
+    flex-wrap: wrap;
+}
+
+.result {
+    display: block;
+	border-collapse: collapse;
+
+}
+
+.result-tr {
+   
+}
+
+.result-td {
+    border:  2px solid #333;
 }
 
 /* FOOTER */
