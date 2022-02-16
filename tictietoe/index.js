@@ -1,6 +1,6 @@
 let origBoard;
-let huPlayer = 'O';
-let aiPlayer = 'X';
+let huPlayer = '';
+let aiPlayer = '';
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -11,19 +11,49 @@ const winCombos = [
 	[0, 4, 8],
 	[6, 4, 2]
 ]
+const tic = document.querySelector('.tic');
+const toe = document.querySelector('.toe');
 
-// let change = '';
-// change = huPlayer;
-// huPlayer = aiPlayer;
-// aiPlayer = change;
+// CHOOSE SIDE (X OR O)
+
+function chooseTic() {
+	huPlayer = 'X';
+	aiPlayer = 'O';
+	document.querySelector(".startGameWindow").style.display = "none";
+	return huPlayer, aiPlayer;
+}
+
+tic.addEventListener('click', chooseTic);
+
+function chooseToe() {
+	huPlayer = 'O';
+	aiPlayer = 'X';
+	document.querySelector(".startGameWindow").style.display = "none";
+	turn(randomInteger(0, 8), aiPlayer);
+	return huPlayer, aiPlayer;
+}
+
+toe.addEventListener('click', chooseToe);
+
+// RANDOM INTEGER
+
+function randomInteger(min, max) {
+	let rand = min + Math.random() * (max + 1 - min);
+	return Math.floor(rand);
+  }
+  
+
+
+
 
 const cells = document.querySelectorAll('.cell');
 startGame();
 
-//turn(3,aiPlayer)
+
 
 function startGame() {
 	document.querySelector(".endgame").style.display = "none";
+	document.querySelector(".startGameWindow").style.display = "block";
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
