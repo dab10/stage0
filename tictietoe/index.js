@@ -69,6 +69,7 @@ function turnClick(square) {
 		
 		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
 		if (emptySquares().length == 0) (checkWin(origBoard, aiPlayer) || checkTie());
+		if (emptySquares().length == 0) resultTable('Tie', 9);
 		
 	}
 }
@@ -112,6 +113,8 @@ function gameOver(gameWon) {
 	}
 	declareWinner(gameWon.player == huPlayer ? `Win ${gameWon.player}. Moves: ${emptySquaresLocal}` : `Win ${gameWon.player}. Moves: ${emptySquaresLocal}`);
 	resultTable(gameWon.player, emptySquaresLocal);
+	
+	
 }
 
 
@@ -121,28 +124,74 @@ function resultTable(player, numberMove) {
 	const highScores = [...JSON.parse(savedScores), result]
 	localStorage.setItem('highScore', JSON.stringify(highScores))
 	let results = JSON.parse( localStorage.highScore );
-	arrPlayer = []
-	arrMoves = []
+	let arrPlayer = []
+	let arrMoves = []
 	for (let keys in results) {
-		arrPlayer.push(results[keys]['userName']);
-		arrMoves.push(results[keys]['score']);
+		arrPlayer.unshift(results[keys]['userName']);
+		arrMoves.unshift(results[keys]['score']);
 	}
 	console.log(arrPlayer)
 	console.log(arrMoves)
-	for (let i = (arrPlayer.length - 10); i < arrPlayer.length; i++) {
-		if ((arrPlayer.length - 10) < 0) {
-			continue
-		} else if ((arrPlayer.length - 10) >= 0) {
+	
+	
+	
+		  
+	for(let i=0; i<10; i++) {
+	  tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
+	} 
+	for(let i=1; i<11; i++) {
+		 		
+				 let firstRow = document.getElementById("tableResult1").rows[i];
+				 firstRow.deleteCell(0);
+				 firstRow.deleteCell(0);
+				 
+						
+					
+				 
+		 	}
+
+			 
+	//  if (tableResult.rows.length > 9) {
+	// 	for(let i=1; i<9; i++) {
+	// 		tableResult.deleteRow(i)
+	// 	}
+	// }
+}
+		// for (let i = 0; i < 10; i++) {
+	
+				 
+		// 		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
+		// 		arrPlayer = []
+		// 		arrMoves = []
+		// 	 }
+			 
 			
-			tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
-		}
-	}
+		 
+	
+		//  function getListContent() {
+		// 	let result = [];
+		  
+		// 	for(let i=1; i<=10; i++) {
+		// 	  let li = tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
+		// 	  li.append(i);
+		// 	  result.push(li);
+		// 	  result.pop();
+		// 	}
+		  
+		// 	return result;
+		//   }	 
+		 
+
+
+
+	// }
+	
 	
 	// let result = {userName: player, move: numberMove}
 	// let arr = []
 	// arr.push(result);
 	// console.log(arr);
-}
+
 
 
 
@@ -167,7 +216,7 @@ function checkTie() {
 			cells[i].removeEventListener('click', turnClick, false);
 		}
 		declareWinner(`Tie Game. Moves: ${emptySquaresLocal}`)
-		resultTable('Tie', emptySquaresLocal);
+		
 		return true;
 	}
 	return false;
