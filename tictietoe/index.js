@@ -117,8 +117,8 @@ function gameOver(gameWon) {
 	
 }
 
-	let arrPlayer = []
-	let arrMoves = []
+arrPlayerLocalStorage = []
+arrMovesLocalStorage = []
 
 function resultTable(player, numberMove) {
 	const result = {userName: player, score: numberMove}
@@ -126,44 +126,61 @@ function resultTable(player, numberMove) {
 	const highScores = [...JSON.parse(savedScores), result]
 	localStorage.setItem('highScore', JSON.stringify(highScores))
 	let results = JSON.parse( localStorage.highScore );
-	
+	let arrPlayer = []
+	let arrMoves = []
 	for (let keys in results) {
-		if (results.length < 10) {
-		arrPlayer.push(results[keys]['userName']);
-		arrMoves.push(results[keys]['score']);
-		} else if (results.length > 10) {
-			arrPlayer.push(results[keys]['userName']);
-			
-			arrMoves.push(results[keys]['score']);
-			
-		} else	{break}
+		
+		arrPlayer.unshift(results[keys]['userName']);
+		arrMoves.unshift(results[keys]['score']);
+
 	}
+
+
 	if (arrPlayer.length > 10) {
-	arrPlayer.splice(0,arrPlayer.length-10)
-	arrMoves.splice(0,arrMoves.length-10)
+	arrPlayer.splice(10,arrPlayer.length-1)
+	arrMoves.splice(10,arrMoves.length-1)
 	}
-	
+	console.log(results)
+	console.log(arrPlayer)
+	console.log(arrMoves)
+
 	resultTableShow(arrPlayer,arrMoves)
-	return arrPlayer, arrMoves
+
+return arrPlayerLocalStorage = arrPlayer, arrMovesLocalStorage = arrMoves
 	
 }
-console.log(arrMoves)
+
 
 
 function resultTableShow(arrPlayerShow, arrMovesShow) {
-
 	let elements = document.querySelectorAll('#tableResult tr')
-		for(let i=0; i < arrPlayerShow.length; i++) {
-	 if (elements.length < 11) {
-		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
-	 }
-	 if (elements.length >= 11) {
+	console.log(elements)
+	
+//  if (elements.length === 1) {
+// 	tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[0]}</td><td>${arrMoves[0]}</td></tr>`)
+//  }
+ 
+		if (elements.length > 0 && elements.length < 11) {
 		
-			document.getElementById("tableResult1").deleteRow(1);
-		
-		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
-	 }
-	} 
+			for(let i=0; i < arrPlayerShow.length; i++) {
+	tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
+			}
+			for (j = arrPlayerShow.length-1; j > 0; j--) {
+				document.getElementById("tableResult1").deleteRow(1);
+			}
+		 	
+	
+	
+ }
+ if (elements.length >= 11) {
+	for(let i=0; i < arrPlayerShow.length; i++) {
+	
+		document.getElementById("tableResult1").deleteRow(1);
+	
+	tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
+ }
+}
+
 }
 	// for(let i=1; i < arrPlayer.length; i++) {
 		 		
@@ -177,21 +194,26 @@ function resultTableShow(arrPlayerShow, arrMovesShow) {
 				 
 	// 	 	}
 	
-// SAVE IN LOCAL STORAGE
+//SAVE IN LOCAL STORAGE
 
 function setLocalStorage() {
-	localStorage.setItem('arrPlayer', JSON.stringify(arrPlayer));
-	localStorage.setItem('arrMoves', JSON.stringify(arrMoves));
+	localStorage.setItem('arrPlayer', JSON.stringify(arrPlayerLocalStorage));
+	localStorage.setItem('arrMoves', JSON.stringify(arrMovesLocalStorage));
   }
   
   window.addEventListener('beforeunload', setLocalStorage)
   
   function getLocalStorage() {
-	const arrPlayer = JSON.parse(localStorage.getItem('arrPlayer')) || []
-	const arrMoves = JSON.parse(localStorage.getItem('arrMoves')) || []
-	resultTableShow(arrPlayer, arrMoves)
-
+	const arrPlayer = JSON.parse(localStorage.getItem('arrPlayer'))
+	const arrMoves = JSON.parse(localStorage.getItem('arrMoves'))
+	//resultTableShow(arrPlayer, arrMoves)
+	if (arrPlayer.length > 0) {
+	for(let i=0; i < arrPlayer.length; i++) {
+		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
+	}
   }
+  return arrPlayerLocalStorage = arrPlayer, arrMovesLocalStorage = arrMoves
+}
   
   window.addEventListener('load', getLocalStorage)
 
