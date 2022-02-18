@@ -117,6 +117,8 @@ function gameOver(gameWon) {
 	
 }
 
+	let arrPlayer = []
+	let arrMoves = []
 
 function resultTable(player, numberMove) {
 	const result = {userName: player, score: numberMove}
@@ -124,73 +126,77 @@ function resultTable(player, numberMove) {
 	const highScores = [...JSON.parse(savedScores), result]
 	localStorage.setItem('highScore', JSON.stringify(highScores))
 	let results = JSON.parse( localStorage.highScore );
-	let arrPlayer = []
-	let arrMoves = []
+	
 	for (let keys in results) {
-		arrPlayer.unshift(results[keys]['userName']);
-		arrMoves.unshift(results[keys]['score']);
+		if (results.length < 10) {
+		arrPlayer.push(results[keys]['userName']);
+		arrMoves.push(results[keys]['score']);
+		} else if (results.length > 10) {
+			arrPlayer.push(results[keys]['userName']);
+			
+			arrMoves.push(results[keys]['score']);
+			
+		} else	{break}
 	}
-	console.log(arrPlayer)
-	console.log(arrMoves)
+	if (arrPlayer.length > 10) {
+	arrPlayer.splice(0,arrPlayer.length-10)
+	arrMoves.splice(0,arrMoves.length-10)
+	}
 	
+	resultTableShow(arrPlayer,arrMoves)
+	return arrPlayer, arrMoves
 	
-	
-		  
-	for(let i=0; i<10; i++) {
-	  tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
+}
+console.log(arrMoves)
+
+
+function resultTableShow(arrPlayerShow, arrMovesShow) {
+
+	let elements = document.querySelectorAll('#tableResult tr')
+		for(let i=0; i < arrPlayerShow.length; i++) {
+	 if (elements.length < 11) {
+		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
+	 }
+	 if (elements.length >= 11) {
+		
+			document.getElementById("tableResult1").deleteRow(1);
+		
+		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
+	 }
 	} 
-	for(let i=1; i<11; i++) {
+}
+	// for(let i=1; i < arrPlayer.length; i++) {
 		 		
-				 let firstRow = document.getElementById("tableResult1").rows[i];
-				 firstRow.deleteCell(0);
-				 firstRow.deleteCell(0);
-				 
+	// 			 //let firstRow = document.getElementById("tableResult1").rows[i];
+	// 			 //firstRow.deleteCell(0);
+	// 			 //firstRow.deleteCell(0);
+	// 			 document.getElementById("tableResult1").deleteRow(arrPlayer.length - i);
+	
 						
 					
 				 
-		 	}
+	// 	 	}
+	
+// SAVE IN LOCAL STORAGE
 
-			 
-	//  if (tableResult.rows.length > 9) {
-	// 	for(let i=1; i<9; i++) {
-	// 		tableResult.deleteRow(i)
-	// 	}
-	// }
-}
-		// for (let i = 0; i < 10; i++) {
-	
-				 
-		// 		tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
-		// 		arrPlayer = []
-		// 		arrMoves = []
-		// 	 }
-			 
-			
-		 
-	
-		//  function getListContent() {
-		// 	let result = [];
-		  
-		// 	for(let i=1; i<=10; i++) {
-		// 	  let li = tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[i]}</td><td>${arrMoves[i]}</td></tr>`);
-		// 	  li.append(i);
-		// 	  result.push(li);
-		// 	  result.pop();
-		// 	}
-		  
-		// 	return result;
-		//   }	 
-		 
+function setLocalStorage() {
+	localStorage.setItem('arrPlayer', JSON.stringify(arrPlayer));
+	localStorage.setItem('arrMoves', JSON.stringify(arrMoves));
+  }
+  
+  window.addEventListener('beforeunload', setLocalStorage)
+  
+  function getLocalStorage() {
+	const arrPlayer = JSON.parse(localStorage.getItem('arrPlayer')) || []
+	const arrMoves = JSON.parse(localStorage.getItem('arrMoves')) || []
+	resultTableShow(arrPlayer, arrMoves)
+
+  }
+  
+  window.addEventListener('load', getLocalStorage)
 
 
 
-	// }
-	
-	
-	// let result = {userName: player, move: numberMove}
-	// let arr = []
-	// arr.push(result);
-	// console.log(arr);
 
 
 
