@@ -44,7 +44,7 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
-// GAME
+// START GAME
 
 const cells = document.querySelectorAll(".cell");
 startGame();
@@ -62,17 +62,13 @@ function startGame() {
   }
 }
 
+// CHECK MOVE
+
 function turnClick(square) {
   if (typeof origBoard[square.target.id] == "number") {
     turn(square.target.id, huPlayer);
-    // if (huPlayer === 'O') {playAudioToe()}
-    // if (huPlayer === 'X') {playAudioTic()}
-
     if (!checkWin(origBoard, huPlayer) && !checkTie())
       turn(bestSpot(), aiPlayer);
-
-    // if (huPlayer === 'O') {playAudioTic()} else {playAudioToe()}
-    // if (aiPlayer === 'X') {playAudioToe()} else {playAudioTic()}
     if (emptySquares().length == 0) checkWin(origBoard, aiPlayer) || checkTie();
     if (emptySquares().length == 0)
       checkWin(origBoard, aiPlayer) || resultTable("Tie", 9);
@@ -82,9 +78,10 @@ function turnClick(square) {
       checkTie()
     )
       playAudioTie();
-    //  if (emptySquares().length == 0 && checkWin(origBoard, aiPlayer)) playAudioEnd()
   }
 }
+
+// TURN SIDE
 
 function turn(squareId, player) {
   origBoard[squareId] = player;
@@ -100,6 +97,8 @@ function turn(squareId, player) {
     playAudioEnd();
   }
 }
+
+// CHECK WIN
 
 function checkWin(board, player) {
   let plays = board.reduce((a, e, i) => (e === player ? a.concat(i) : a), []);
@@ -131,8 +130,10 @@ function gameOver(gameWon) {
   resultTable(gameWon.player, emptySquaresLocal);
 }
 
-arrPlayerLocalStorage = [];
-arrMovesLocalStorage = [];
+// CREATE RESULT
+
+arrPlayerLocalStorage = []; // FOR LOCAL STORAGE
+arrMovesLocalStorage = []; // FOR LOCAL STORAGE
 
 function resultTable(player, numberMove) {
   const result = { userName: player, score: numberMove };
@@ -154,8 +155,10 @@ function resultTable(player, numberMove) {
 
   resultTableShow(arrPlayer, arrMoves);
 
-  return (arrPlayerLocalStorage = arrPlayer), (arrMovesLocalStorage = arrMoves);
+  return (arrPlayerLocalStorage = arrPlayer), (arrMovesLocalStorage = arrMoves); // FOR LOCAL STORAGE
 }
+
+// DISPLAY RESULT
 
 function resultTableShow(arrPlayerShow, arrMovesShow) {
   let elements = document.querySelectorAll("#tableResult tr");
@@ -195,7 +198,7 @@ window.addEventListener("beforeunload", setLocalStorage);
 function getLocalStorage() {
   const arrPlayer = JSON.parse(localStorage.getItem("arrPlayer"));
   const arrMoves = JSON.parse(localStorage.getItem("arrMoves"));
-  //resultTableShow(arrPlayer, arrMoves)
+
   if (arrPlayer.length > 0) {
     for (let i = 0; i < arrPlayer.length; i++) {
       tableResult.insertAdjacentHTML(
@@ -209,18 +212,26 @@ function getLocalStorage() {
 
 window.addEventListener("load", getLocalStorage);
 
+// DISPLAY WINNER
+
 function declareWinner(who) {
   document.querySelector(".endgame").style.display = "block";
   document.querySelector(".endgame .text").innerText = who;
 }
 
+// FIND EMPTY SQUARES
+
 function emptySquares() {
   return origBoard.filter((s) => typeof s == "number");
 }
 
+// RESULT MINIMAX (AI)
+
 function bestSpot() {
   return minimax(origBoard, aiPlayer).index;
 }
+
+// CHECKTIE
 
 function checkTie() {
   let emptySquaresLocal = 8 - (emptySquares().length - 1);
@@ -235,6 +246,8 @@ function checkTie() {
   }
   return false;
 }
+
+// AI
 
 function minimax(newBoard, player) {
   var availSpots = emptySquares();
@@ -320,3 +333,19 @@ function playAudioEnd() {
   audioTie.currentTime = 0;
   audioTie.play();
 }
+
+// CONSOLE.LOG
+
+console.log(`
+1. Вёрстка +10
+  - реализован интерфейс игры +5
+  - в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5
+2. При кликах по игровому полю по очереди отображаются крестики и нолики. Первая фигура всегда крестик +10
+3. Игра завершается, когда три фигуры выстроились в ряд по вертикали, горизонтали или диагонали +10
+4. По окончанию игры выводится её результат - выигравшая фигура и количество ходов от начала игры до её завершения +10
+5. Результаты последних 10 игр сохраняются в local storage. Есть таблица рекордов, в которой отображаются результаты предыдущих 10 игр +10
+6. Анимации или звуки, или настройки игры. Баллы начисляются за любой из перечисленных пунктов +10
+7. Очень высокое качество оформления приложения и/или дополнительный не предусмотренный в задании функционал, улучшающий качество приложения +10
+  - высокое качество оформления приложения предполагает собственное оригинальное оформление равное или отличающееся в лучшую сторону по сравнению с демо
+Итого 70
+`)

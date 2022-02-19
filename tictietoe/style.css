@@ -65,7 +65,6 @@ body {
     left: 50%;
 	margin-left: -155px;
     margin-top: -170px;
-	
 }
 
 .table tr:first-child td {
@@ -102,20 +101,17 @@ body {
     background-position: 200% 0, 0 0;
     box-shadow: rgba(0,0,0,.3) 0 2px 5px;
     border-radius: 10px;
-
 }
 
 .tic:active, .toe:active, .replay:active {
     top: 1px;
     box-shadow: none;
-  }
+}
 
 .tic:hover, .toe:hover, .replay:hover {
     transition: .5s linear;
     background-position: -200% 0, 0 0;
-  }
-
-
+}
 
 .endgame {
   display: none;
@@ -135,8 +131,6 @@ body {
   font-size: 1.9em;
 }
 
-
-
 #tableResult {
     display: block;
 	border-collapse: collapse;
@@ -145,12 +139,7 @@ body {
     top: 50%;
     left: 75%;;
     margin-top: -155px;
-    
-
-
 }
-
-
 
 #tableResult > tr > td {
     border:  2px solid #CCCC00;
