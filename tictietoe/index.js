@@ -55,6 +55,7 @@ function startGame() {
 	document.querySelector(".endgame").style.display = "none";
 	document.querySelector(".startGameWindow").style.display = "block";
 	document.querySelector("table").style.display = "none";
+	
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
@@ -69,7 +70,7 @@ function turnClick(square) {
 		
 		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
 		if (emptySquares().length == 0) (checkWin(origBoard, aiPlayer) || checkTie());
-		if (emptySquares().length == 0) resultTable('Tie', 9);
+		if (emptySquares().length == 0) (checkWin(origBoard, aiPlayer) || resultTable('Tie', 9));
 		
 	}
 }
@@ -140,9 +141,7 @@ function resultTable(player, numberMove) {
 	arrPlayer.splice(10,arrPlayer.length-1)
 	arrMoves.splice(10,arrMoves.length-1)
 	}
-	console.log(results)
-	console.log(arrPlayer)
-	console.log(arrMoves)
+
 
 	resultTableShow(arrPlayer,arrMoves)
 
@@ -154,11 +153,9 @@ return arrPlayerLocalStorage = arrPlayer, arrMovesLocalStorage = arrMoves
 
 function resultTableShow(arrPlayerShow, arrMovesShow) {
 	let elements = document.querySelectorAll('#tableResult tr')
-	console.log(elements)
+
 	
-//  if (elements.length === 1) {
-// 	tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayer[0]}</td><td>${arrMoves[0]}</td></tr>`)
-//  }
+
  
 		if (elements.length > 0 && elements.length < 11) {
 		
@@ -166,7 +163,7 @@ function resultTableShow(arrPlayerShow, arrMovesShow) {
 	tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
 			}
 			for (j = arrPlayerShow.length-1; j > 0; j--) {
-				document.getElementById("tableResult1").deleteRow(1);
+				document.getElementById("tableRes").deleteRow(1);
 			}
 		 	
 	
@@ -175,24 +172,14 @@ function resultTableShow(arrPlayerShow, arrMovesShow) {
  if (elements.length >= 11) {
 	for(let i=0; i < arrPlayerShow.length; i++) {
 	
-		document.getElementById("tableResult1").deleteRow(1);
+		document.getElementById("tableRes").deleteRow(1);
 	
 	tableResult.insertAdjacentHTML('beforeend', `<tr><td>${arrPlayerShow[i]}</td><td>${arrMovesShow[i]}</td></tr>`);
  }
 }
 
 }
-	// for(let i=1; i < arrPlayer.length; i++) {
-		 		
-	// 			 //let firstRow = document.getElementById("tableResult1").rows[i];
-	// 			 //firstRow.deleteCell(0);
-	// 			 //firstRow.deleteCell(0);
-	// 			 document.getElementById("tableResult1").deleteRow(arrPlayer.length - i);
-	
-						
-					
-				 
-	// 	 	}
+
 	
 //SAVE IN LOCAL STORAGE
 
