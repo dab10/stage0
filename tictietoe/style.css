@@ -33,7 +33,7 @@ body {
     display: none;
     width: 290px;
     top: 120px;
-    background-color: rgba(210, 105, 30, 0.8);
+    background-color: rgba(204, 102, 0, 0.8);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -48,7 +48,7 @@ body {
 }
 
 .td {
-	border:  2px solid #333;
+	border:  2px solid #CCCC00;
 	height:  100px;
 	width:  100px;
 	text-align:  center;
@@ -61,9 +61,11 @@ body {
     display: block;
 	border-collapse: collapse;
 	position: absolute;
-	left: 50%;
+	top: 50%;
+    left: 50%;
 	margin-left: -155px;
-	top: 50px;
+    margin-top: -170px;
+	
 }
 
 .table tr:first-child td {
@@ -119,7 +121,7 @@ body {
   display: none;
   width: 290px;
   top: 120px;
-  background-color: rgba(210, 105, 30, 0.8);
+  background-color: rgba(204, 102, 0, 0.8);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -130,32 +132,33 @@ body {
   text-align: center;
   border-radius: 5px;
   color: white;
-  font-size: 2em;
+  font-size: 1.9em;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
+
 
 #tableResult {
     display: block;
 	border-collapse: collapse;
     align-items: center;
-    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 75%;;
+    margin-top: -155px;
+    
+
 
 }
 
 
 
 #tableResult > tr > td {
-    border:  2px solid #000;
-    color:chocolate;
+    border:  2px solid #CCCC00;
+    color:rgba(204, 102, 0, 0.8);
     border-collapse: collapse;
     text-align: center;
     width: 75px;
+    color: #000;
 }
 
 /* FOOTER */
